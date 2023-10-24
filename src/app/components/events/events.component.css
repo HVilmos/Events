@@ -1,0 +1,111 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.hero-image{
+    height:140px;
+
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1.6em;
+    padding: 1.2em 0 0.5em 0;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.55em;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 2em auto;
+    background-color: var(--var-card-dark);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    padding: 2rem 2rem 0 2rem;
+}
+
+div.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.coin-base,
+.time-left,
+.card-attribute {
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.card-attribute {
+    padding-bottom: 1.5em;
+    border-top: 2px solid var(--var-line-dark);
+} 
+
+.small-image {
+    width: 1.2em;
+    margin-right: 0.5em;
+}
+
+.card-container {
+    background-color: #f0e7e7;
+}
+.card-container {
+    position: relative;
+  }
+  
+  .open {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 8px;
+    padding: 7px 15px;
+    border: none;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+    color: #fff;
+  }
+  
+  
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+
+  
+  
+ 
+  

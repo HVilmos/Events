@@ -1,0 +1,11 @@
+.register{
+    background-color: white;
+    padding: 3px 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.login{
+    padding: 3px 10px;
+    border-radius: 20px;
+}
