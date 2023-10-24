@@ -1,0 +1,17 @@
+  <div class="main">
+    <div>
+    <h2 class="card-title mb-4">Köszönjük a regisztrációt</h2>
+    <h5 class="card-text mb-5">Kérjük erősítse meg a regisztrációt alábbi email címen</h5>
+
+    <div class="form-floating mb-2">
+      <input disabled="true" [(ngModel)]="email" type="email" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Email cím</label>
+    </div>
+
+    <p (click)="sendVerificationEmail()"  type="button" class=" mb-5">Megerősítő email újraküldése</p>
+
+    <div class="form-floating mb-3">
+      <button routerLink="/signin" type="button" class="login mb-3">Bejelentkezés</button>
+    </div>
+  </div>
+  </div>

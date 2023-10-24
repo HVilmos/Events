@@ -9,5 +9,71 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 })
 export class AuthService {
- 
+  url="https://europe-west1-mindcave-b6cf7.cloudfunctions.net/api/"
+  
+  constructor(private afAuth:AngularFireAuth,
+    private router:Router, private http: HttpClient) { }
+
+  getUsers(){
+    this.getLoggedUser().subscribe(
+      (user)=>{
+        user?.getIdToken().then(
+          (t)=>{
+            let headers = new HttpHeaders().set('Authorization', t)
+            return this.http.get(this.url+'users', {headers}).
+            subscribe({
+              next:(users)=>console.log(users),
+              error:(e)=>console.log(e)
+            })
+          }
+        )
+      }
+    )
+  }
+    
+
+  googleAuth(){
+    //return this.afAuth.signInWithPopup(new GoogleAuthProvider())
+    // this.afAuth.signInWithRedirect(new GoogleAuthProvider()).then(
+    this.afAuth.signInWithPopup(new GoogleAuthProvider()).then(
+      (u)=>{
+        console.log("Google regisztráció",u)
+        this.router.navigate(['/home'])
+      }
+    )
+  }
+
+  signUp(email:string, password:string)
+  {
+    return this.afAuth.createUserWithEmailAndPassword(email, password)
+  }
+
+  signIn(email:string, password:string)
+  {
+    return this.afAuth.signInWithEmailAndPassword(email, password)
+  }
+
+  signOut(){
+    return this.afAuth.signOut()
+  }
+
+  getLoggedUser(){
+    return this.afAuth.authState
+  }
+
+  sendVerificationEmail(){
+    this.afAuth.currentUser.then(
+      (user)=>user?.sendEmailVerification()
+    ).then(
+      ()=>this.router.navigate(['verifyemail'])
+    )
+    .catch((e)=>console.log(e))
+  }
+
+  forgotPassword(email:string){
+    return this.afAuth.sendPasswordResetEmail(email)
+  }
+
+
+
 }

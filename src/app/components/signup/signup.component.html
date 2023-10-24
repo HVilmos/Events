@@ -1,0 +1,33 @@
+
+<div class="row justify-content-center">
+  <div class="form login">
+    <div class="form-content">
+        <header>Regisztráció</header>
+            <div class="field input-field">
+                <input type="email" [(ngModel)]="email" placeholder="Email" class="input" name="email" autocomplete="email">
+            </div>
+            <div class="field input-field">
+                <input type="password" [(ngModel)]="password" placeholder="Jelszó" class="password" name="password">
+            </div>
+            <div class="field input-field">
+              <input type="password" [(ngModel)]="password2" placeholder="Jelszó" class="password" name="Password2">
+          </div>
+           
+            <div class="field button-field">
+                <button [disabled]="validUser()" (click)="signUp()">Regisztráció</button>
+            </div>
+       
+    </div>
+    <div class="line"></div>
+    
+    <div class="media-options">
+     
+      <button (click)="googleAuth()" class="login-with-google-btn">
+         Bejelentkezés Google -al
+      </button>
+        
+    </div>
+  </div>
+  </div>
+
+

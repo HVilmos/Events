@@ -1,24 +1,47 @@
-    <div class="row m-3" >
-      <div class="col-md-3 mb-4 " *ngFor="let item of events">
-        <div class="card-container d-flex flex-column">
-          <a href="/" class="hero-image-container">
-            <img class="hero-image" src="{{item.imgUrl}}" />
-          </a>
-          <main class="main-content flex-fill">
-            <h1>{{item.name}}</h1>
-            <p>{{item.description}}</p>
-            <div class="flex-row">
-              <div class="coin-base">
-                <img src="https://pngimg.com/d/price_label_PNG77.png" class="small-image" />
-                <h2>Price: {{item.price}} Ft</h2>
-              </div>
-              <div class="time-left">
-                <img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />
-                <p>{{ calculateRemainingDays(item.date) }} nap múlva</p>
-              </div>
-            </div>
-            <button class="open"  >Open</button>
-          </main>
+<div class="container d-flex justify-content-center">
+  <div class=" m-3">
+  <div class="col-md-12">
+    <label for="sortingSelect">Rendezés:</label>
+    <select id="sortingSelect" [(ngModel)]="selectedSortOption" (change)="sortEvents()">
+      <option value="default">Alapértelmezett</option>
+      <option value="dateAsc">Dátum szerint növekvő</option>
+      <option value="dateDesc">Dátum szerint csökkenő</option>
+      <option value="priceAsc">Ár szerint növekvő</option>
+      <option value="priceDesc">Ár szerint csökkenő</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="row m-3">
+  <div class="col-md-12">
+    <label for="searchInput">Keresés:</label>
+    <input id="searchInput" [(ngModel)]="searchText" (input)="filterEvents()" />
+  </div>
+  </div>
+
+</div>
+
+<div class="row m-3">
+  <div class="col-md-3 mb-4" *ngFor="let item of sortedEvents">
+    <div class="card-container d-flex flex-column">
+      <a href="/" class="hero-image-container">
+        <img class="hero-image" src="{{item.imgUrl}}" />
+      </a>
+      <main class="main-content flex-fill">
+        <h1>{{item.name}}</h1>
+        <p>{{item.description}}</p>
+        <div class="flex-row">
+          <div class="coin-base">
+            <img src="https://pngimg.com/d/price_label_PNG77.png" class="small-image" />
+            <h2>Ár: {{item.price}} Ft</h2>
+          </div>
+          <div class="time-left">
+            <img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />
+            <p>{{ calculateRemainingDays(item.date) }} nap múlva</p>
+          </div>
         </div>
-      </div>
+        <button class="open">Open</button>
+      </main>
     </div>
+  </div>
+</div>
