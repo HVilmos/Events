@@ -2,7 +2,7 @@
   <div class=" m-3">
   <div class="col-md-12">
     <label for="sortingSelect">Rendezés:</label>
-    <select id="sortingSelect" [(ngModel)]="selectedSortOption" (change)="sortEvents()">
+    <select id="sortingSelect" >
       <option value="default">Alapértelmezett</option>
       <option value="dateAsc">Dátum szerint növekvő</option>
       <option value="dateDesc">Dátum szerint csökkenő</option>
@@ -15,33 +15,29 @@
   <div class="row m-3">
   <div class="col-md-12">
     <label for="searchInput">Keresés:</label>
-    <input id="searchInput" [(ngModel)]="searchText" (input)="filterEvents()" />
+    <input id="searchInput" />
   </div>
   </div>
 
 </div>
 
-<div class="row m-3">
-  <div class="col-md-3 mb-4" *ngFor="let item of sortedEvents">
-    <div class="card-container d-flex flex-column">
-      <a href="/" class="hero-image-container">
-        <img class="hero-image" src="{{item.imgUrl}}" />
-      </a>
-      <main class="main-content flex-fill">
-        <h1>{{item.name}}</h1>
-        <p>{{item.description}}</p>
-        <div class="flex-row">
-          <div class="coin-base">
-            <img src="https://pngimg.com/d/price_label_PNG77.png" class="small-image" />
-            <h2>Ár: {{item.price}} Ft</h2>
-          </div>
-          <div class="time-left">
-            <img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />
-            <p>{{ calculateRemainingDays(item.date) }} nap múlva</p>
+<div class="container mt-5 ">
+      <div class="">
+        <div class="card" *ngFor="let event of events">
+          <div class="d-flex content">
+            <div class="align-center d-flex align-items-center justify-content-center"> <!-- Módosítás itt -->
+              <img class="" [src]="event.imgUrl" alt="">
+            </div>
+            <div class="ms-2">
+              <h5 class="name">{{event.name}}</h5>
+              <p>{{event.description}}</p>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg> {{event.dateFormatted}}</p>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16"><path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/><path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+                </svg> {{event.price}} Ft</p>
+            </div>
           </div>
         </div>
-        <button class="open">Open</button>
-      </main>
-    </div>
-  </div>
+        
+      </div>
 </div>
