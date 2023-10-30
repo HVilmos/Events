@@ -21,6 +21,7 @@ import { CategoriesComponent } from './components/mainPage/categories/categories
 import { IntroductionComponent } from './components/mainPage/introduction/introduction.component';
 import { FeaturedComponent } from './components/mainPage/featured/featured.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
+import { ContactComponent } from './components/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { ForgotPasswordComponent } from './components/auth/forgot-password/forgo
     CategoriesComponent,
     IntroductionComponent,
     FeaturedComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

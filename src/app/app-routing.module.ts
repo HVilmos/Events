@@ -7,6 +7,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path:'signin', component:SigninComponent},
   {path:'verifyemail', component:VerifyEmailComponent},
   {path:'forgotpassword', component:ForgotPasswordComponent},
+  {path:'contact', component:ContactComponent},
+
 
 
 
