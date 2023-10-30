@@ -3,9 +3,9 @@
        
         <div class="d-flex justify-content-around align-items-center mb-3">
             <h2 class="m-0">Kiemelt események</h2>
-            <p class="m-0 text-decoration-underline">Összes esemény</p>
+            <p class="m-0 text-decoration-underline" routerLink="events">Összes esemény</p>
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center ">
             <div class="card" *ngFor="let event of events">
                 <img class="" [src]="event.imgUrl" alt="">
                 <div class="">

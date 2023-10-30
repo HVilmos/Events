@@ -1,0 +1,15 @@
+<div class="main">
+    <div class="content text-center">
+      <h2 class="mb-3 mt-3">{{ event.name }}</h2>
+      <h5 class="mb-3 w-75">{{ event.description }}</h5>
+      <h5 class="mb-3">{{ event.date }}</h5>
+      <button class="more mb-4">Részletek</button>
+      <p class="mt-2 mb-2">Ennyi idő múlva:</p>
+      <div class="d-flex ">
+         <div class="counterBox me-1">{{ countdown.days }} Nap</div>
+         <div class="counterBox me-1">{{ countdown.hours }} Óra</div>
+         <div class="counterBox me-1">{{ countdown.minutes }} Perc</div>
+         <div class="counterBox me-1">{{ countdown.seconds }} Másodperc</div>
+      </div>
+    </div>
+  </div>

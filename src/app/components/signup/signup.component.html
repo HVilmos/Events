@@ -12,7 +12,8 @@
             <div class="field input-field">
               <input type="password" [(ngModel)]="password2" placeholder="Jelszó" class="password" name="Password2">
           </div>
-           
+          <p class="text-center mt-4" routerLink="/signin">Van már fiókja?</p>
+
             <div class="field button-field">
                 <button [disabled]="validUser()" (click)="signUp()">Regisztráció</button>
             </div>

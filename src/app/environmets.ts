@@ -1,4 +1,5 @@
 export const Environmets = {
+    production:false,
     firebaseConfig : {
         apiKey: "AIzaSyCr-xbzLxBvuercmflZd5Fu2SHG9MwgRSE",
         authDomain: "mindcave-b6cf7.firebaseapp.com",

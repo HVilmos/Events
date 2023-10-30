@@ -157,3 +157,8 @@ a.google span{
     }
     
   }
+
+  p{
+    text-decoration: underline;
+    cursor: pointer;
+  }

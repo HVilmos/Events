@@ -10,14 +10,17 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Environmets } from './environmets';
 import { NavComponent } from './components/nav/nav.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/mainPage/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { EventsComponent } from './components/events/events.component';
 import { FormsModule } from '@angular/forms';
-import { PasswordComponent } from './components/password/password.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { CategoriesComponent } from './components/mainPage/categories/categories.component';
+import { IntroductionComponent } from './components/mainPage/introduction/introduction.component';
+import { FeaturedComponent } from './components/mainPage/featured/featured.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,10 +28,13 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     HomeComponent,
     AdminComponent,
     EventsComponent,
-    PasswordComponent,
     SigninComponent,
     SignupComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    CategoriesComponent,
+    IntroductionComponent,
+    FeaturedComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
