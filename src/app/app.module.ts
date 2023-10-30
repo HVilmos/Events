@@ -14,13 +14,13 @@ import { HomeComponent } from './components/mainPage/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { EventsComponent } from './components/events/events.component';
 import { FormsModule } from '@angular/forms';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
 import { CategoriesComponent } from './components/mainPage/categories/categories.component';
 import { IntroductionComponent } from './components/mainPage/introduction/introduction.component';
 import { FeaturedComponent } from './components/mainPage/featured/featured.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 @NgModule({
   declarations: [
     AppComponent,
