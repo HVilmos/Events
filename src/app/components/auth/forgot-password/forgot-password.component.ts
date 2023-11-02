@@ -17,4 +17,8 @@ export class ForgotPasswordComponent {
   forgotPassword(){
     this.auth.forgotPassword(this.email)
   }
+
+  googleAuth(){
+    this.auth.googleAuth()
+  }
 }

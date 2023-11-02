@@ -1,13 +1,13 @@
 export const Environmets = {
     production:false,
     firebaseConfig : {
-        apiKey: "AIzaSyCr-xbzLxBvuercmflZd5Fu2SHG9MwgRSE",
-        authDomain: "mindcave-b6cf7.firebaseapp.com",
-        databaseURL: "https://mindcave-b6cf7-default-rtdb.europe-west1.firebasedatabase.app",
-        projectId: "mindcave-b6cf7",
-        storageBucket: "mindcave-b6cf7.appspot.com",
-        messagingSenderId: "141964507562",
-        appId: "1:141964507562:web:1e79fbe56f423810b013d3",
-        measurementId: "G-F7TSQSLDGF"
+      apiKey: "AIzaSyA-rv7tJZLISqKjcox86Ncp2_SvUAedOs4",
+      authDomain: "events-d1a32.firebaseapp.com",
+      databaseURL: "https://events-d1a32-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "events-d1a32",
+      storageBucket: "events-d1a32.appspot.com",
+      messagingSenderId: "854288844804",
+      appId: "1:854288844804:web:c8d61241bd85c7114c8d51",
+      measurementId: "G-DF2JGL3MB9"
       }
 }

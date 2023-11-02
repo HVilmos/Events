@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/service/config.service';
 import { BaseService } from 'src/app/service/base.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-introduction',
@@ -12,7 +14,7 @@ export class IntroductionComponent implements OnInit {
   countdown: any = {};
   private countdownInterval: any;
 
-  constructor(private base: BaseService, private config: ConfigService) {}
+  constructor(private base: BaseService, private config: ConfigService, private router: Router, private auth: AuthService) {}
 
   ngOnInit() {
     this.base.getData().snapshotChanges().subscribe((events) => {
@@ -74,5 +76,34 @@ export class IntroductionComponent implements OnInit {
       minutes,
       seconds,
     };
+  }
+
+  email:string=""
+  password:string=""
+  password2:string=""
+
+ 
+
+  googleAuth(){
+    this.auth.googleAuth()
+  }
+
+  addMessage(){
+    this.base.addMessage("")
+  }
+
+  signUp() {
+    this.auth.signUp(this.email, this.password).then(
+      () => {
+        this.auth.sendVerificationEmail();
+        this.router.navigate(['verifyemail']); 
+      }
+    ).catch(
+      (e: any) => console.log(e)
+    );
+  }
+
+  validUser(){
+    return false
   }
 }

@@ -22,6 +22,8 @@ import { IntroductionComponent } from './components/mainPage/introduction/introd
 import { FeaturedComponent } from './components/mainPage/featured/featured.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AngularFireModule.initializeApp(Environmets.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

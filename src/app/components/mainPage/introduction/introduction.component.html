@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main d-flex">
     <div class="content text-center">
       <h2 class="mb-3 mt-3">{{ event.name }}</h2>
       <h5 class="mb-3 w-75">{{ event.description }}</h5>
@@ -11,5 +11,41 @@
          <div class="counterBox me-1">{{ countdown.minutes }} Perc</div>
          <div class="counterBox me-1">{{ countdown.seconds }} Másodperc</div>
       </div>
+    </div>
+    <div class="contentForm">
+      <div class="row justify-content-center ">
+        <div class="form login">
+          <div class="form-content">
+              <header>Regisztráció</header>
+                  <div class="field input-field">
+                      <input type="email" [(ngModel)]="email" placeholder="Email" class="input" name="email" autocomplete="email">
+                  </div>
+                  <div class="field input-field">
+                      <input type="password" [(ngModel)]="password" placeholder="Jelszó" class="password" name="password">
+                  </div>
+                  <div class="field input-field">
+                    <input type="password" [(ngModel)]="password2" placeholder="Jelszó" class="password" name="Password2">
+                </div>
+                <p class="text-center mt-4" routerLink="/signin">Van már fiókja?</p>
+      
+                  <div class="field button-field">
+                      <button [disabled]="validUser()" (click)="signUp()">Regisztráció</button>
+                  </div>
+             
+          </div>
+          <div class="line"></div>
+          
+          <div class="media-options">
+           
+            <button (click)="googleAuth()" class="login-with-google-btn">
+               Bejelentkezés Google -al
+            </button>
+              
+          </div>
+        </div>
+        </div>
+      
+      
+      
     </div>
   </div>
