@@ -75,6 +75,19 @@ export class AuthService {
     return this.afAuth.sendPasswordResetEmail(email)
   }
 
+  isAdmin(email: string): Promise<boolean> {
+    return this.firestore
+      .collection('admins', (ref) => ref.where('email', '==', email))
+      .get()
+      .toPromise()
+      .then((querySnapshot) => {
+        if (querySnapshot) {
+          return !querySnapshot.empty;
+        } else {
+          return false;
+        }
+      });
+  }
   
 
 }
