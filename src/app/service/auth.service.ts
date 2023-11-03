@@ -3,16 +3,17 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
  
 })
 export class AuthService {
-  url="https://europe-west1-mindcave-b6cf7.cloudfunctions.net/api/"
+  url="https://europe-west1-events-d1a32.cloudfunctions.net/api/"
   
   constructor(private afAuth:AngularFireAuth,
-    private router:Router, private http: HttpClient) { }
+    private router:Router, private http: HttpClient, private firestore: AngularFirestore) { }
 
   getUsers(){
     this.getLoggedUser().subscribe(
@@ -74,6 +75,6 @@ export class AuthService {
     return this.afAuth.sendPasswordResetEmail(email)
   }
 
-
+  
 
 }

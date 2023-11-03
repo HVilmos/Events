@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Environmets } from './environmets';
-import { NavComponent } from './components/nav/nav.component';
+import { NavComponents } from './components/nav/nav.component';
 import { HomeComponent } from './components/mainPage/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { EventsComponent } from './components/events/events.component';
@@ -27,7 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
+    NavComponents,
     HomeComponent,
     AdminComponent,
     EventsComponent,
