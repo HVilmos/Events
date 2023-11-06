@@ -6,7 +6,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
   providedIn: 'root'
 })
 export class BaseService {
-  addMessage(arg0: string) {
+  addMessage(_arg0: string) {
     throw new Error('Method not implemented.');
   }
 
@@ -20,11 +20,28 @@ export class BaseService {
     return this.eventsData
   }
 
-  deleteData(key:any){
+  getFeaturedData(){
+    return this.db.list('/featured');
+  }
+
+  getSelfImprovementData(){
+    return this.db.list('/selfImprovement');
+  }
+
+  getTechnologyData(){
+    return this.db.list('/technology')
+  }
+
+  getSportsAndHealthData(){
+    return this.db.list('/sportsAndHealth')
+  }
+
+   deleteData(key:any){
     return this.eventsData.remove(key)
   }
 
   newData(body:any){
     return this.eventsData.push(body)
   }
+
 }

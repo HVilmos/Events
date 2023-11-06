@@ -14,10 +14,10 @@ interface MyEvent {
   styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent {
-  events: any;
+  featuredEvents: any;
 
   constructor(private base: BaseService, private config: ConfigService) {
-    this.base.getData().snapshotChanges().pipe(
+    this.base.getFeaturedData().snapshotChanges().pipe(
       map((changes) =>
         changes.map((c) => {
           const eventData: MyEvent | null = c.payload.val() as MyEvent;
@@ -29,7 +29,7 @@ export class FeaturedComponent {
         })
       )
     ).subscribe(adatok => {
-      this.events = adatok;
+      this.featuredEvents = adatok;
     });
   }
 

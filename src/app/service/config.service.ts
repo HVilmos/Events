@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
 
   eventList=[
-    "imgUrl", "name","description", "price" , "date"
+    "imgUrl", "name","description", "price" , "date", "location"
   ]
   constructor() { }
 

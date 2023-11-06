@@ -4,7 +4,7 @@
     background-size: cover;
     background-blend-mode: multiply;
     background-color: #838282;
-    height: 92vh;
+    height: 93vh;
 }
 
 .content{
@@ -28,30 +28,38 @@
 
 h2{
     letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 60px;
 }
 
-.more {
-  background: #5E5DF0;
-  border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 10px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 8px 18px;
-  border: 0;
+small{
+    font-size: 24px;
+}
+
+.more{
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 10px 20px ;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 200ms,background 200ms;
+    background: transparent;
+    background-color: #FFFFFF;
 }
 
 .counterBox{
-    border: 2px solid #747373;
+    border: 2px solid #FFFFFF;
     border-radius: 10px;
     padding: 5px 10px;
     width: 150px;
+    backdrop-filter: blur(20px);
 }
 
-
+.timeTitle{
+    font-size: 21px;
+}
 
 .form{
     display: flex;

@@ -15,6 +15,9 @@ interface MyEvents {
 })
 export class EventsComponent {
   events: any;
+  selfImprovementEvents: any;
+  technologyEvents: any;
+  sportsAndHealthEvents: any;
  
 
   constructor(private base: BaseService, private config: ConfigService) {
@@ -32,6 +35,52 @@ export class EventsComponent {
     ).subscribe(adatok => {
       this.events = adatok;
     });
+
+    this.base.getSelfImprovementData().snapshotChanges().pipe(
+      map((changes) =>
+        changes.map((c) => {
+          const eventData: MyEvents | null = c.payload.val() as MyEvents;
+          if (eventData) {
+            const eventDate = eventData.date ? new Date(eventData.date) : null;
+            eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
+          }
+          return { key: c.payload.key, ...eventData };
+        })
+      )
+    ).subscribe(adatok => {
+      this.selfImprovementEvents = adatok;
+    });
+
+    this.base.getTechnologyData().snapshotChanges().pipe(
+      map((changes) =>
+        changes.map((c) => {
+          const eventData: MyEvents | null = c.payload.val() as MyEvents;
+          if (eventData) {
+            const eventDate = eventData.date ? new Date(eventData.date) : null;
+            eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
+          }
+          return { key: c.payload.key, ...eventData };
+        })
+      )
+    ).subscribe(adatok => {
+      this.technologyEvents = adatok;
+    });
+
+    this.base.getSportsAndHealthData().snapshotChanges().pipe(
+      map((changes) =>
+        changes.map((c) => {
+          const eventData: MyEvents | null = c.payload.val() as MyEvents;
+          if (eventData) {
+            const eventDate = eventData.date ? new Date(eventData.date) : null;
+            eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
+          }
+          return { key: c.payload.key, ...eventData };
+        })
+      )
+    ).subscribe(adatok => {
+      this.sportsAndHealthEvents = adatok;
+    });
+
   }
 
   private formatDate(date: Date | null): string {
