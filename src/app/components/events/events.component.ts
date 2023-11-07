@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { ConfigService } from 'src/app/service/config.service';
 
@@ -14,13 +14,13 @@ interface MyEvents {
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent {
-  events: any;
-  selfImprovementEvents: any;
-  technologyEvents: any;
-  sportsAndHealthEvents: any;
- 
+  events: any[] = [];
+  selfImprovementEvents: any[] = [];
+  technologyEvents: any[] = [];
+  sportsAndHealthEvents: any[] = [];
 
   constructor(private base: BaseService, private config: ConfigService) {
+    
     this.base.getData().snapshotChanges().pipe(
       map((changes) =>
         changes.map((c) => {

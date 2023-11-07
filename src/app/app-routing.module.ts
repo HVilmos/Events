@@ -10,24 +10,19 @@ import { ForgotPasswordComponent } from './components/auth/forgot-password/forgo
 import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'home', redirectTo:""},
-  {path:'events', component:EventsComponent},
-  {path:'admin', component:AdminComponent},
-  {path:'signup', component:SignupComponent},
-  {path:'signin', component:SigninComponent},
-  {path:'verifyemail', component:VerifyEmailComponent},
-  {path:'forgotpassword', component:ForgotPasswordComponent},
-  {path:'contact', component:ContactComponent},
-
-
-
-
-
+  { path: '', component: HomeComponent },
+  { path: 'home', redirectTo: '' },
+  { path: 'events', component: EventsComponent }, 
+  { path: 'admin', component: AdminComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'verifyemail', component: VerifyEmailComponent },
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
