@@ -12,7 +12,7 @@ import { Environmets } from './environmets';
 import { NavComponents } from './components/nav/nav.component';
 import { HomeComponent } from './components/mainPage/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { EventsComponent } from './components/events/events.component';
+import { EventsComponent } from './components/eventPage/events/events.component';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
@@ -23,6 +23,10 @@ import { FeaturedComponent } from './components/mainPage/featured/featured.compo
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BusinessComponent } from './components/eventPage/business/business.component';
+import { SelfImproveComponent } from './components/eventPage/self-improve/self-improve.component';
+import { TechnologyComponent } from './components/eventPage/technology/technology.component';
+import { SportComponent } from './components/eventPage/sport/sport.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     IntroductionComponent,
     FeaturedComponent,
     ForgotPasswordComponent,
-    ContactComponent
+    ContactComponent,
+    BusinessComponent,
+    SelfImproveComponent,
+    TechnologyComponent,
+    SportComponent
   ],
   imports: [
     BrowserModule,
