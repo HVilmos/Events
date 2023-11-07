@@ -12,23 +12,34 @@ import { BusinessComponent } from './components/eventPage/business/business.comp
 import { SelfImproveComponent } from './components/eventPage/self-improve/self-improve.component';
 import { TechnologyComponent } from './components/eventPage/technology/technology.component';
 import { SportComponent } from './components/eventPage/sport/sport.component';
+import { SelectedCategoriesComponent } from './components/eventPage/selected-categories/selected-categories.component';
+
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '' },
-  { path: 'events', component: EventsComponent }, 
+  { path: 'events', component: EventsComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'verifyemail', component: VerifyEmailComponent },
   { path: 'forgotpassword', component: ForgotPasswordComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'business', component: BusinessComponent },
-  { path: 'selfImprove', component: SelfImproveComponent },
-  { path: 'technology', component: TechnologyComponent },
-  { path: 'sport', component: SportComponent },
+  {
+    path: '',
+    component: SelectedCategoriesComponent, 
+    children: [
+      { path: 'business', component: BusinessComponent },
+      { path: 'selfImprove', component: SelfImproveComponent},
+      { path: 'technology', component: TechnologyComponent },
+      { path: 'sport', component: SportComponent },
+    ]
+  },
+  { path: '**', component: HomeComponent },
 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

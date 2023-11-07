@@ -27,6 +27,7 @@ import { BusinessComponent } from './components/eventPage/business/business.comp
 import { SelfImproveComponent } from './components/eventPage/self-improve/self-improve.component';
 import { TechnologyComponent } from './components/eventPage/technology/technology.component';
 import { SportComponent } from './components/eventPage/sport/sport.component';
+import { SelectedCategoriesComponent } from './components/eventPage/selected-categories/selected-categories.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SportComponent } from './components/eventPage/sport/sport.component';
     BusinessComponent,
     SelfImproveComponent,
     TechnologyComponent,
-    SportComponent
+    SportComponent,
+    SelectedCategoriesComponent
   ],
   imports: [
     BrowserModule,
