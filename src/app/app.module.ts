@@ -11,7 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Environmets } from './environmets';
 import { NavComponents } from './components/nav/nav.component';
 import { HomeComponent } from './components/mainPage/home/home.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './components/adminPage/admin/admin.component';
 import { EventsComponent } from './components/eventPage/events/events.component';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './components/auth/signin/signin.component';
@@ -28,6 +28,12 @@ import { SelfImproveComponent } from './components/eventPage/self-improve/self-i
 import { TechnologyComponent } from './components/eventPage/technology/technology.component';
 import { SportComponent } from './components/eventPage/sport/sport.component';
 import { SelectedCategoriesComponent } from './components/eventPage/selected-categories/selected-categories.component';
+import { AdminBusinessComponent } from './components/adminPage/admin-business/admin-business.component';
+import { AdminFeaturedComponent } from './components/adminPage/admin-featured/admin-featured.component';
+import { AdminSelfImprovmentComponent } from './components/adminPage/admin-self-improvment/admin-self-improvment.component';
+import { AdminTechnologyComponent } from './components/adminPage/admin-technology/admin-technology.component';
+import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sport.component';
+import { AdminCategoriesComponent } from './components/adminPage/admin-categories/admin-categories.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,13 @@ import { SelectedCategoriesComponent } from './components/eventPage/selected-cat
     SelfImproveComponent,
     TechnologyComponent,
     SportComponent,
-    SelectedCategoriesComponent
+    SelectedCategoriesComponent,
+    AdminBusinessComponent,
+    AdminFeaturedComponent,
+    AdminSelfImprovmentComponent,
+    AdminTechnologyComponent,
+    AdminSportComponent,
+    AdminCategoriesComponent
   ],
   imports: [
     BrowserModule,
