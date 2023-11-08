@@ -1,0 +1,22 @@
+
+
+.box{
+    padding: 0.5rem;
+    border-radius: 15px;
+    width: 150px;
+    margin: 1rem;
+    background-color: rgba(136, 183, 189, 0.08);
+    align-items: center;
+}
+
+.box:hover{
+    transform: scale(103%);
+    transition: 0.6s;
+    background-color: rgba(85, 116, 120, 0.08);
+    cursor: pointer;
+}
+
+svg{
+    height: 50px;
+    width: 50px;
+}
