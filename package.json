@@ -25,6 +25,7 @@
     "dotenv": "^16.3.1",
     "firebase": "9.9.1",
     "firebase-admin": "^11.11.0",
+    "ng2-search-filter": "^0.5.1",
     "nodemailer": "^6.9.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

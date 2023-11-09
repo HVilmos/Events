@@ -34,6 +34,7 @@ import { AdminSelfImprovmentComponent } from './components/adminPage/admin-self-
 import { AdminTechnologyComponent } from './components/adminPage/admin-technology/admin-technology.component';
 import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sport.component';
 import { AdminCategoriesComponent } from './components/adminPage/admin-categories/admin-categories.component';
+import { SearchComponent } from './components/eventPage/search/search.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { AdminCategoriesComponent } from './components/adminPage/admin-categorie
     AdminSelfImprovmentComponent,
     AdminTechnologyComponent,
     AdminSportComponent,
-    AdminCategoriesComponent
+    AdminCategoriesComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

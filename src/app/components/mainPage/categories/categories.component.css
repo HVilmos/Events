@@ -1,12 +1,32 @@
+.text {
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
 
+.boxes {
+    width: 70%; /* Eredeti 70% */
+    padding: 0 10%; /* Új padding mindkét oldalon */
+    display: flex;
+    flex-wrap: wrap; /* Hogy az elemek új sorban helyezkedjenek el, ha nem férnek ki */
+    justify-content: space-between; /* Hogy az elemek közötti távolság mindig maximális legyen */
+  }
+  
 
 .box{
     padding: 0.5rem;
     border-radius: 15px;
     width: 150px;
     margin: 1rem;
-    background-color: rgba(136, 183, 189, 0.08);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: rgba(216, 222, 222, 0.2 );
+    background-image: linear-gradient(315deg, rgba(216, 222, 222, 0.2) 0%, rgba(229, 189, 246, 0.1 ) 74%);
     align-items: center;
+    height: max-content;
 }
 
 .box:hover{

@@ -17,6 +17,8 @@ export class BusinessComponent {
   events: any[] = [];
   constructor(private base: BaseService, private config: ConfigService) {
 
+
+    
   this.base.getData().snapshotChanges().pipe(
     map((changes) =>
       changes.map((c) => {
@@ -46,4 +48,7 @@ export class BusinessComponent {
     }
     return '';
   }
+
+  
+  
 }
