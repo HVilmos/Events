@@ -34,7 +34,9 @@ import { AdminSelfImprovmentComponent } from './components/adminPage/admin-self-
 import { AdminTechnologyComponent } from './components/adminPage/admin-technology/admin-technology.component';
 import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sport.component';
 import { AdminCategoriesComponent } from './components/adminPage/admin-categories/admin-categories.component';
-import { SearchComponent } from './components/eventPage/search/search.component';
+import { OrganizersComponent } from './components/mainPage/organizers/organizers.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { EventDetailsComponent } from './components/event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { SearchComponent } from './components/eventPage/search/search.component'
     AdminTechnologyComponent,
     AdminSportComponent,
     AdminCategoriesComponent,
-    SearchComponent,
+    OrganizersComponent,
+    FooterComponent,
+    EventDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
 .main{
-    background-image: url("https://images.pexels.com/photos/9934462/pexels-photo-9934462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("https://nbcconferencecentre.com/content/uploads/sites/2/2018/02/Zorg-van-de-Zaak-event-28sept2018-071.jpg");
     width: 100%;
     background-size: cover;
     background-blend-mode: multiply;
-    background-color: #838282;
-    height: 93vh;
+    background-color: #4d4f51;
+    height: 78vh;
+
 }
 
 .content{
@@ -26,6 +27,8 @@
 
 }
 
+
+
 h2{
     letter-spacing: 1px;
     font-weight: 600;
@@ -37,24 +40,23 @@ small{
 }
 
 .more{
-    border: 2px solid white;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 10px 20px ;
     font-size: 18px;
     font-weight: 700;
-    line-height: 1;
-    transition: transform 200ms,background 200ms;
-    background: transparent;
-    background-color: #FFFFFF;
+    background: #113f67; 
+    color: #FFF;
+    border: none;
+
 }
 
 .counterBox{
-    border: 2px solid #FFFFFF;
     border-radius: 10px;
     padding: 5px 10px;
     width: 150px;
-    backdrop-filter: blur(20px);
+	background: #D3D3D3; 
+    color: #000;
 }
 
 .timeTitle{
@@ -106,7 +108,7 @@ header{
 
 .field button{
     color: #fff;
-    background-color: #0171d3;
+    background-color: #38598b;
     transition: all 0.3s ease;
     cursor: pointer;
 }

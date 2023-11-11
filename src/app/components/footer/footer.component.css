@@ -1,0 +1,26 @@
+footer{
+    background-color: #113f67;
+    color: #fff;
+    width: 100%;
+    position: sticky;
+  
+}
+
+ul li{
+    list-style: none;
+  
+}
+
+ul{
+      padding: 0%;
+}
+
+svg, path {
+height: 30px;
+width: 30px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}

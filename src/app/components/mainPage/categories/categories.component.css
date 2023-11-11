@@ -1,20 +1,28 @@
 .text {
-    width: 30%;
+    width: 50%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+
+  .text p{
+    font-size: 1.2rem;
+  }
   
+  h2{
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
 
 .boxes {
-    width: 70%; /* Eredeti 70% */
-    padding: 0 10%; /* Új padding mindkét oldalon */
+    width: 50%; 
+    padding: 0 2%; 
     display: flex;
-    flex-wrap: wrap; /* Hogy az elemek új sorban helyezkedjenek el, ha nem férnek ki */
-    justify-content: space-between; /* Hogy az elemek közötti távolság mindig maximális legyen */
-  }
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
   
 
 .box{
@@ -40,3 +48,5 @@ svg{
     height: 50px;
     width: 50px;
 }
+
+

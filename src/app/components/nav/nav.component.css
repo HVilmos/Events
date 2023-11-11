@@ -1,5 +1,11 @@
 nav{
-    height: 7vh;
+    height: 3rem;
+	background: #113f67; 
+    color: #fff;
+}
+
+a{
+    color: #fff;
 }
 
 .register{
@@ -21,4 +27,46 @@ nav{
 svg{
     height: 30px;
     width: 30px;
+}
+
+.logo, .buttons{
+    width: 10%;
+}
+
+.navList {
+    width: 80%;
+    
+}
+
+.navList ul li {
+    font-size: 1.1rem; 
+    font-weight: 500;  
+    color: #fff;
+}
+
+.logo a{
+    font-weight: 500;  
+
+}
+
+
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:focus,
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+  border: none !important;
+}
+
+.navbar-brand{
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none !important;
+}
+
+.buttons .bi-person-circle.active,
+.buttons .bi-person-circle:focus,
+.buttons .bi-person-circle:hover {
+  border: none !important;
+  outline: none !important; 
 }

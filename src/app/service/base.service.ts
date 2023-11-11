@@ -6,6 +6,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
   providedIn: 'root'
 })
 export class BaseService {
+  
   addMessage(_arg0: string) {
     throw new Error('Method not implemented.');
   }
@@ -51,7 +52,7 @@ export class BaseService {
     return this.eventsData.remove(key)
   }
 
-  newData(body:any){
+  newData(body: any) {
     return this.eventsData.push(body)
   }
 
@@ -96,4 +97,10 @@ export class BaseService {
   }
 
   
+
+  getEventById(eventId: string): AngularFireList<Event> {
+    return this.db.list(`/events/${eventId}`);
+  }
+
+ 
 }

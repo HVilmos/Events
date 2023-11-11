@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { ConfigService } from 'src/app/service/config.service';
+import { Router } from '@angular/router';
 
 interface MyEvents {
   date?: string;
@@ -15,7 +16,7 @@ interface MyEvents {
 })
 export class BusinessComponent {
   events: any[] = [];
-  constructor(private base: BaseService, private config: ConfigService) {
+  constructor(private base: BaseService, private config: ConfigService, private router: Router) {
 
 
     
@@ -49,6 +50,9 @@ export class BusinessComponent {
     return '';
   }
 
-  
+  onViewDetailsClick(eventId: string) {
+    // Az átirányítás a 'event/:id' útvonalra, ahol az id a kiválasztott esemény azonosítója
+    this.router.navigate(['/event', eventId]);
+  }
   
 }

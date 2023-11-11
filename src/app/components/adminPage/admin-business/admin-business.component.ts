@@ -20,13 +20,15 @@ export class AdminBusinessComponent {
   }
 
   submitForm() {
-    if (this.newCard.name && this.newCard.description && this.newCard.imgUrl && this.newCard.price && this.newCard.date) {
+  
+    if (this.newCard.name && this.newCard.description && this.newCard.imgUrl && this.newCard.price && this.newCard.date && this.newCard.text) {
       this.base.newData(this.newCard);
       this.newCard = {};
     } else {
       alert('Kérlek töltsd ki az összes mezőt!');
     }
   }
+  
 
   eventDelete(index: number) {
     const eventToDelete = this.events[index];
