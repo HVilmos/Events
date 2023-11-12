@@ -2,7 +2,9 @@ footer{
     background-color: #113f67;
     color: #fff;
     width: 100%;
-    position: sticky;
+    position: relative;
+    bottom: 0;
+    
   
 }
 

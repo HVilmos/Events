@@ -5,29 +5,27 @@
         <div class="row align-items-center">
           <div class="col-lg-7 mb-5 mb-lg-0">
             <h2 class="mb-5">Vegye fel velünk a kapcsolatot</h2>
-            <form class="border-right pr-5 mb-5"  name="contactForm" >
+            <form class="border-right pr-5 mb-5"  name="contactForm" [formGroup]="form" (ngSubmit)="onSubmit()" >
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" class="form-control" name="fname" id="fname" placeholder="Vezetéknév" >
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Név" formControlName="name">
                 </div>
-                <div class="col-md-6 form-group">
-                  <input type="text" class="form-control" name="lname" id="lname" placeholder="Keresztnév" >
-                </div>
+               
                 
               </div>
               <div class="row">
                 <div class="col-md-12 form-group">
-                  <input type="text" class="form-control" name="email" id="email" placeholder="Email" >
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Email" formControlName="email">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12 form-group">
-                  <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Írja be az üzenetet" ></textarea>
+                  <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Írja be az üzenetet" formControlName="message"></textarea>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <input type="submit" value="Küldés" class="btn btn-primary mt-3">
+                  <input type="submit" value="Küldés" class="btn btn-primary mt-3" [disabled]="form.invalid">
                 </div>
               </div>
             </form>
