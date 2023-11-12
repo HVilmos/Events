@@ -9,23 +9,18 @@ import { BaseService } from 'src/app/service/base.service';
 })
 export class EventDetailsComponent implements OnInit {
   event: any;
+  eventType!: string; // Új változó az esemény típusának tárolására
 
   constructor(private route: ActivatedRoute, private base: BaseService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const eventId = params['id'];
-  
-      console.log('Event ID:', eventId);
-  
-      this.base.getEventById(eventId).valueChanges().subscribe(event => {
+      this.eventType = params['type']; // Az új paraméter a típust tárolja
+      const eventId = params['id'];  
+      this.base.getEventById(eventId, this.eventType).valueChanges().subscribe(event => {
         console.log('Event Data:', event);
         this.event = event;
       });
     });
   }
-
- 
-  
 }
-

@@ -36,7 +36,7 @@ import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sp
 import { AdminCategoriesComponent } from './components/adminPage/admin-categories/admin-categories.component';
 import { OrganizersComponent } from './components/mainPage/organizers/organizers.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { EventDetailsComponent } from './components/event-details/event-details.component';
+import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +67,7 @@ import { EventDetailsComponent } from './components/event-details/event-details.
     OrganizersComponent,
     FooterComponent,
     EventDetailsComponent,
+
   ],
   imports: [
     BrowserModule,

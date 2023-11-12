@@ -98,9 +98,11 @@ export class BaseService {
 
   
 
-  getEventById(eventId: string): AngularFireList<Event> {
-    return this.db.list(`/events/${eventId}`);
+  getEventById(eventId: string, eventType: string): AngularFireList<Event> {
+    return this.db.list(`/${eventType}/${eventId}`);
   }
+
+ 
 
  
 }

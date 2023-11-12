@@ -18,7 +18,7 @@ import { AdminSelfImprovmentComponent } from './components/adminPage/admin-self-
 import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sport.component';
 import { AdminTechnologyComponent } from './components/adminPage/admin-technology/admin-technology.component';
 import { AdminFeaturedComponent } from './components/adminPage/admin-featured/admin-featured.component';
-import { EventDetailsComponent } from './components/event-details/event-details.component';
+import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
 
 
 
@@ -53,7 +53,7 @@ const routes: Routes = [
       { path: 'adminSport', component: AdminSportComponent },
     ]
   },
-  { path: 'event/:id', component: EventDetailsComponent },
+  { path: 'event/:type/:id', component: EventDetailsComponent },
   { path: '**', component: HomeComponent },
 
 ];

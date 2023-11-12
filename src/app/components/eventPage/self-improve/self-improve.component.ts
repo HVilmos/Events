@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { ConfigService } from 'src/app/service/config.service';
-
+import { Router } from '@angular/router';
 interface MyEvents {
   date?: string;
   dateFormatted?: string;
@@ -16,7 +16,7 @@ interface MyEvents {
 export class SelfImproveComponent {
   selfImprovementEvents: any[] = [];
 
-  constructor(private base: BaseService, private config: ConfigService) {
+  constructor(private base: BaseService, private config: ConfigService, private router:Router) {
 
     this.base.getSelfImprovementData().snapshotChanges().pipe(
       map((changes) =>
@@ -48,6 +48,11 @@ export class SelfImproveComponent {
       return date.toLocaleDateString('hu-HU', options);
     }
     return '';
+  }
+
+  onViewDetailsClick(eventId: string, eventType: string) {
+    // Az átirányítás a 'event/:type/:id' útvonalra, ahol a type a típus, az id pedig az azonosító
+    this.router.navigate(['/event', eventType, eventId]);
   }
 
 }
