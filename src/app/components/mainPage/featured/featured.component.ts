@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { ConfigService } from 'src/app/service/config.service';
 import { Router } from '@angular/router';
+import { BookMarkService } from 'src/app/service/book-mark.service';
 interface MyEvent {
   date?: string;
   dateFormatted?: string;
@@ -16,7 +17,7 @@ interface MyEvent {
 export class FeaturedComponent {
   featuredEvents: any;
 
-  constructor(private base: BaseService, private config: ConfigService, private router: Router) {
+  constructor(private base: BaseService, private config: ConfigService, private router: Router, private bookmark: BookMarkService) {
     this.base.getFeaturedData().snapshotChanges().pipe(
       map((changes) =>
         changes.map((c) => {
@@ -47,8 +48,11 @@ export class FeaturedComponent {
     return '';
   }
 
-  onViewDetailsClick(eventId: string, eventType: string) {
-    // Az átirányítás a 'event/:type/:id' útvonalra, ahol a type a típus, az id pedig az azonosító
+  onViewDetailsClick(eventId: string, eventType: string,) {
     this.router.navigate(['/event', eventType, eventId]);
+  }
+  
+  addToBookmarks(event: any) {
+    this.bookmark.addToBookmarks(event);
   }
 }
