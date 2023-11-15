@@ -34,8 +34,7 @@ export class AuthService {
     
 
   googleAuth(){
-    //return this.afAuth.signInWithPopup(new GoogleAuthProvider())
-    // this.afAuth.signInWithRedirect(new GoogleAuthProvider()).then(
+
     this.afAuth.signInWithPopup(new GoogleAuthProvider()).then(
       (u)=>{
         console.log("Google regisztráció",u)
