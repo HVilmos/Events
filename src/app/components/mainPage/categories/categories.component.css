@@ -50,3 +50,40 @@ svg{
 }
 
 
+
+@media screen and (max-width: 767px) {
+   
+  .main{
+    display: block !important;
+  }
+
+  .text{
+    width: 100%;
+  }
+
+  .boxes{
+    width: 100%;
+  }
+
+  .box{
+    width: 135px;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .main{
+    display: block !important;
+  }
+
+  .text{
+    width: 100%;
+  }
+
+  .boxes{
+    width: 100%;
+  }
+
+}
+
+

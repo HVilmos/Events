@@ -2,8 +2,8 @@ footer{
     background-color: #113f67;
     color: #fff;
     width: 100%;
-    position: relative;
-    bottom: 0;
+    
+    
     
   
 }
@@ -25,4 +25,21 @@ width: 30px;
 a{
     color: #fff;
     text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+   
+   
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+   
+
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+   
+    
+    
 }

@@ -8,19 +8,9 @@ a{
     color: #fff;
 }
 
-.register{
-    background-color: white;
-    padding: 3px 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-}
 
-.login{
-    padding: 3px 10px;
-    border-radius: 20px;
-}
 
-.buttons{
+.profile{
     text-align: right;
 }
 
@@ -29,13 +19,12 @@ svg{
     width: 30px;
 }
 
-.logo, .buttons{
+.logo{
     width: 10%;
 }
 
 .navList {
-    width: 80%;
-    
+    width: 90%;
 }
 
 .navList ul li {
@@ -64,9 +53,9 @@ svg{
     border: none !important;
 }
 
-.buttons .bi-person-circle.active,
-.buttons .bi-person-circle:focus,
-.buttons .bi-person-circle:hover {
+.profile .bi-person-circle.active,
+.profile .bi-person-circle:focus,
+.profile .bi-person-circle:hover {
   border: none !important;
   outline: none !important; 
 }

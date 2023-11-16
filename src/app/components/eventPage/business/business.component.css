@@ -1,53 +1,47 @@
-
-img{
-    height: 130px;
-    border-radius: 10px;
+img {
+  height: 140px;
+  border-radius: 10px;
 }
 
-.name{
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
+.name {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
-.card{
-    height: 100%;
-    margin: 0 1rem;
-    width: 300px;
-    border: none;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-    border-radius: 20px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background-color: rgba(216, 222, 222, 0.2 );
-    background-image: linear-gradient(315deg, rgba(216, 222, 222, 0.2) 0%, rgba(229, 189, 246, 0.1 ) 74%);
-
-}
-.card:hover{
-    cursor: pointer;
+.card {
+  height: 100%;
+  margin: 0 1rem;
+  width: 300px; 
+  border: none;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: rgba(216, 222, 222, 0.3);
+  background-image: linear-gradient(315deg, rgba(216, 222, 222, 0.3) 0%, rgba(229, 189, 246, 0.15 ) 74%);
 }
 
+.card:hover {
+  cursor: pointer;
+}
 
-.name{
-    font-weight: 500;
-    margin-top: 1rem;
+.name {
+  font-weight: 500;
+  margin-top: 1rem;
 }
 
 .button-9 {
-  
-  background: #113f67; 
+  background: #113f67;
   color: #fff;
   font-weight: 500;
   border-radius: 10px;
   border-width: 0;
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
   box-sizing: border-box;
-  color: #fff;
   cursor: pointer;
   font-size: 100%;
   height: 44px;
-    padding: 0 10px;
-
-  
+  padding: 0 10px;
 }
 
 .button-9:disabled {
@@ -56,4 +50,41 @@ img{
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    width: auto;
+    margin: 0 1rem; 
+  }
+
+  .row {
+    justify-content: center;
+  }
+
+  .main {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .card {
+    width: 100%; 
+  }
+
+  .main {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .card {
+      width: 100%; 
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+      width: 100%; 
+    }
 }

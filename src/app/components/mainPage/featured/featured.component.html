@@ -6,9 +6,9 @@
       </div>
   
       <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let event of featuredEvents">
-          <div class="card d-flex flex-column align-items-stretch">
-            <img class="" [src]="event.imgUrl" alt="">
+        <div class="col-lg-3 col-md-6 col-sm-12 main" *ngFor="let event of featuredEvents">
+          <div class="card ">
+            <img class="img" [src]="event.imgUrl" alt="">
             <div class="flex-grow-1">
               <h5 class="name">{{event.name}}</h5>
               <p>{{event.description}}</p>

@@ -15,12 +15,16 @@
         <small class="mb-3 w-75 ">{{ event.description }}</small>
         <button class="more mb-4 " (click)="onViewDetailsClick(event.key, 'events')">Megtekint</button>
         <p class="mt-4 mb-2 timeTitle">Hátralévő idő:</p>
-        <div class="d-flex ">
-          <div class="counterBox me-1">{{ countdown.days }} Nap</div>
-          <div class="counterBox me-1">{{ countdown.hours }} Óra</div>
-          <div class="counterBox me-1">{{ countdown.minutes }} Perc</div>
-          <div class="counterBox me-1">{{ countdown.seconds }} Másodperc</div>
+        <div class="time">
+          <div class="d-flex">
+          <div class="counterBox m-1">{{ countdown.days }} Nap</div>
+          <div class="counterBox m-1">{{ countdown.hours }} Óra</div>
         </div>
+          <div class="d-flex">
+          <div class="counterBox m-1">{{ countdown.minutes }} Perc</div>
+          <div class="counterBox m-1">{{ countdown.seconds }} Másodperc</div>
+        </div>
+      </div>
     </div>
     <div class="contentForm">
       <div class="row justify-content-center ">

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class NavComponents implements OnInit {
   isAdmin: boolean = false;
+  navbarCollapsed = true;
 
   constructor(private auth: AuthService, private router: Router) {}
 
@@ -23,4 +24,10 @@ export class NavComponents implements OnInit {
       }
     });
   }
+
+  toggleNavbarCollapsing() {
+    this.navbarCollapsed = !this.navbarCollapsed;
+  }
+
+  
 }

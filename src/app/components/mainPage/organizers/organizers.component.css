@@ -43,3 +43,22 @@
     height: 44px;
     padding: 0 20px;
   }
+
+  @media screen and (max-width: 767px) {
+
+  .main{
+    margin-top: 2rem !important;
+  }
+
+  .left{
+    display: none;
+  }
+   
+ .right{
+  height: auto;
+  width: 100%;
+  padding: 3rem 1rem;
+ }
+    
+}
+

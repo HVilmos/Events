@@ -17,6 +17,8 @@
     align-items: center;
     text-align: center;
     width: 60%;
+    padding: 0 5%;
+
 }
 
 .contentForm{
@@ -51,12 +53,17 @@ small{
 
 }
 
+.time{
+    display: flex;
+}
+
 .counterBox{
     border-radius: 10px;
     padding: 5px 10px;
     width: 150px;
-	background: #D3D3D3; 
-    color: #000;
+	background: transparent; 
+    color: #fff;
+    border: 1.5px solid #fff;
 }
 
 .timeTitle{
@@ -219,3 +226,46 @@ a.google span{
     cursor: pointer;
   }
  
+  @media screen and (max-width: 767px) {
+    .contentForm{
+        display: none;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .time{
+        display: block;
+    }
+
+    h2{
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-size: 40px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+   
+
+    .contentForm {
+        display: none;
+    }
+
+    .content{
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+   
+    .time{
+        display: block;
+    }
+    
+}
+
+    
+  
