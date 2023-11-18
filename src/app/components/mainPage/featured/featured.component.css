@@ -44,7 +44,6 @@
     padding: 0 10px;
   }
   
-<<<<<<< HEAD
   .button-9:disabled {
     cursor: default;
   }
@@ -90,8 +89,7 @@
       }
   }
   
-=======
-}
+
 
 .button-9:disabled {
   cursor: default;
@@ -105,4 +103,3 @@
     height: 35px;
     width: 35px;
 }
->>>>>>> ed0eb0cc9545ec91a1e680b4c2a65f8f0a29ee89
