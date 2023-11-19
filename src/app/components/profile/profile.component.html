@@ -1,0 +1,31 @@
+<div *ngIf="userProfile" class="container mt-5">
+  <h3>Személyes adatok</h3>
+  <div class="my-4">
+    <label for="name" class="mb-1">Név:</label>
+    <input type="text" class="form-control w-25" id="name" placeholder="pl: Horváth Vilmos" [(ngModel)]="userProfile.name">
+  </div>
+  <div class="my-4">
+    <label for="email" class="mb-1">Email</label>
+    <input type="text" class="form-control w-25" id="email" [value]="userProfile.email" readonly>
+  </div>
+  <div class="my-4">
+    <label for="birth" class="mb-1">Születési idő</label><br>
+    <input type="date" [(ngModel)]="userProfile.birh">
+  </div>
+  <div class="my-4">
+    <label for="phone" class="mb-1">Telefonszám</label><br>
+    <div class="input-group w-25">
+      <div class="input-group-prepend">
+        <span class="input-group-text">+36</span>
+      </div>
+      <input type="text" 
+      class="form-control" 
+      id="phone" 
+      placeholder="707572227" 
+      [ngModel]="userProfile.phoneNumber" 
+      (ngModelChange)="onPhoneChange($event)" 
+      maxlength="9">
+    </div>
+  </div>
+  <button (click)="saveProfileToFirestore()" class="btn btn-primary">Mentés</button>
+</div>

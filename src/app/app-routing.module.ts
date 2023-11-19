@@ -19,6 +19,8 @@ import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sp
 import { AdminTechnologyComponent } from './components/adminPage/admin-technology/admin-technology.component';
 import { AdminFeaturedComponent } from './components/adminPage/admin-featured/admin-featured.component';
 import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'verifyemail', component: VerifyEmailComponent },
   { path: 'forgotpassword', component: ForgotPasswordComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+
   {
     path: '',
     component: SelectedCategoriesComponent, 

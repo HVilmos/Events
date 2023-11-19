@@ -21,7 +21,7 @@ export class AdminBusinessComponent {
 
   submitForm() {
   
-    if (this.newCard.name && this.newCard.description && this.newCard.imgUrl && this.newCard.price && this.newCard.date && this.newCard.text) {
+    if (this.newCard.name && this.newCard.description && this.newCard.imgUrl && this.newCard.price && this.newCard.date && this.newCard.text ) {
       this.base.newData(this.newCard);
       this.newCard = {};
     } else {

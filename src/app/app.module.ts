@@ -37,6 +37,7 @@ import { AdminCategoriesComponent } from './components/adminPage/admin-categorie
 import { OrganizersComponent } from './components/mainPage/organizers/organizers.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { EventDetailsComponent } from './components/oneEvent/event-details/event
     OrganizersComponent,
     FooterComponent,
     EventDetailsComponent,
+    ProfileComponent,
 
   ],
   imports: [
