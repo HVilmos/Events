@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { ConfigService } from 'src/app/service/config.service';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 interface MyEvent {
   date?: string;
@@ -14,10 +15,12 @@ interface MyEvent {
   templateUrl: './featured.component.html',
   styleUrls: ['./featured.component.css']
 })
-export class FeaturedComponent {
+export class FeaturedComponent implements OnInit {
+  ngOnInit(): void {
+  }
   featuredEvents: any;
 
-  constructor(private base: BaseService, private config: ConfigService, private router: Router, ) {
+  constructor(private base: BaseService, private config: ConfigService, private router: Router, private userService:UserService ) {
     this.base.getFeaturedData().snapshotChanges().pipe(
       map((changes) =>
         changes.map((c) => {
@@ -32,7 +35,10 @@ export class FeaturedComponent {
     ).subscribe(adatok => {
       this.featuredEvents = adatok;
     });
+
   }
+
+  
 
   private formatDate(date: Date | null): string {
     if (date) {
@@ -52,5 +58,12 @@ export class FeaturedComponent {
     this.router.navigate(['/event', eventType, eventId]);
   }
   
+  onBookmarkClick(event: any): void {
+    this.userService.addBookmark(event.key).then(() => {
+      console.log('Esemény sikeresen hozzáadva a könyvjelzőkhöz.');
+    }).catch((error) => {
+      console.error('Hiba az esemény könyvjelzőkhöz adásakor:', error);
+    });
+  }
   
 }

@@ -1,20 +1,21 @@
-<div *ngIf="userProfile" class="container mt-5">
+<div class="d-flex container mt-5 " *ngIf="userProfile">
+<div class="container personalData">
   <h3>Személyes adatok</h3>
   <div class="my-4">
     <label for="name" class="mb-1">Név:</label>
-    <input type="text" class="form-control w-25" id="name" placeholder="pl: Horváth Vilmos" [(ngModel)]="userProfile.name">
+    <input type="text" class="form-control w-75" id="name" placeholder="pl: Horváth Vilmos" [(ngModel)]="userProfile.name">
   </div>
   <div class="my-4">
     <label for="email" class="mb-1">Email</label>
-    <input type="text" class="form-control w-25" id="email" [value]="userProfile.email" readonly>
+    <input type="text" class="form-control w-75" id="email" [value]="userProfile.email" readonly>
   </div>
   <div class="my-4">
     <label for="birth" class="mb-1">Születési idő</label><br>
-    <input type="date" [(ngModel)]="userProfile.birh">
+    <input type="date" class="form-control w-75" [(ngModel)]="userProfile.birh">
   </div>
   <div class="my-4">
     <label for="phone" class="mb-1">Telefonszám</label><br>
-    <div class="input-group w-25">
+    <div class="input-group w-75">
       <div class="input-group-prepend">
         <span class="input-group-text">+36</span>
       </div>
@@ -27,5 +28,35 @@
       maxlength="9">
     </div>
   </div>
-  <button (click)="saveProfileToFirestore()" class="btn btn-primary">Mentés</button>
+  <button (click)="saveProfileToFirestore()" class="btn btn-primary save">Mentés</button>
+</div>
+
+<div class="bookMarkEvents container"  *ngIf="userProfile">
+  <h3>Mentett események</h3>
+  <div class="d-flex my-5" *ngFor="let event of bookmarkedEvents">
+    <div class="">
+      <img [src]="event.imgUrl" alt="">
+    </div>
+    <div class="ms-3 text">
+      <h5>{{event.name}}</h5>
+      <p>{{event.description}}</p>
+      <div class="d-flex">
+      <p class="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg> {{event.place}}</p>
+      <p class="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+      </svg> {{event.date}}</p>
+      <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16"><path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/><path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+      </svg> {{event.price}} Ft</p>
+      </div>
+      <svg  (click)="removeBookmark(event.eventId)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+      </svg>
+    </div>
+    <hr>
+  </div>
+</div>
+
+
 </div>
