@@ -29,5 +29,15 @@ export class NavComponents implements OnInit {
     this.navbarCollapsed = !this.navbarCollapsed;
   }
 
+  navigateToProfile() {
+    this.auth.getLoggedUser().subscribe((user) => {
+      if (user && user.email) {
+        this.router.navigate(['/profile']);
+      } else {
+        this.router.navigate(['/signin']);
+      }
+    });
+  }
+  
   
 }

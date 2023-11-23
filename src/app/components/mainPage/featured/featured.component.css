@@ -1,5 +1,6 @@
 .img {
     height: 140px;
+    width: 100%;
     border-radius: 10px;
   }
   
@@ -65,6 +66,10 @@
     .main {
       margin-bottom: 2.5rem;
     }
+
+    .card img{
+      height: 60%
+    }
   }
   
   @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -91,15 +96,5 @@
   
 
 
-.button-9:disabled {
-  cursor: default;
-}
 
-.button-9:focus {
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
-}
 
-.bookMark{
-    height: 35px;
-    width: 35px;
-}

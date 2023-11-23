@@ -65,9 +65,7 @@ export class AuthService {
       const additionalUserInfo = result.additionalUserInfo;
   
       if (additionalUserInfo?.profile) {
-        // Ellenőrizze, hogy a profile rendelkezik-e a szükséges tulajdonságokkal
         if ('name' in additionalUserInfo.profile && 'birh' in additionalUserInfo.profile && 'phoneNumber' in additionalUserInfo.profile) {
-          // Típuskonverzió, ha a típus nem ismert
           const userProfileData = {
             email: user?.email,
             name: additionalUserInfo.profile.name as string,
@@ -139,4 +137,6 @@ export class AuthService {
         }
       });
   }
+
+  
 }

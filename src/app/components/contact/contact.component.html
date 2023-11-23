@@ -8,14 +8,14 @@
             <form class="border-right pr-5 mb-5"  name="contactForm" [formGroup]="form" (ngSubmit)="onSubmit()" >
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" class="form-control" name="name" id="name" placeholder="Név" formControlName="name">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Név" formControlName="name" autocomplete="additional-name">
                 </div>
                
                 
               </div>
               <div class="row">
                 <div class="col-md-12 form-group">
-                  <input type="text" class="form-control" name="email" id="email" placeholder="Email" formControlName="email">
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Email" formControlName="email" autocomplete="email">
                 </div>
               </div>
               <div class="row">
@@ -34,7 +34,7 @@
           <div class="col-lg-4 ml-auto">
             <h3 class="mb-4">Iratkozzon fel hírlevelünkre</h3>
             <p>Mindig az elsők között értesüljön a legújabb híreinkről és exkluzív ajánlatainkról.</p>
-            <p><a href="#">Megtekint</a></p>
+            <p><a class="" routerLink="/profile">Megtekint</a></p>
           </div>
         </div>
       </div>  

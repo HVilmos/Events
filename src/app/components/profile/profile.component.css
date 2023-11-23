@@ -1,13 +1,60 @@
 .personalData{
-  width: 40%;
+  width: 55%;
 }
 
-.bookMarkEvents{
-  width: 60%;
+.newsLetter{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700; }
 
-.save,.save:hover{
+h3 {
+  font-size: 2rem;
+  font-weight: 700; }
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0; 
+}
+.form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; 
+}
+
+.btn, .form-control {
+  height: 55px; }
+
+form.border-right {
+  padding-right: 6rem !important; 
+}
+@media (max-width: 991.98px) {
+    form.border-right {
+      padding-right: 0 !important;
+      border-right: none !important; 
+    }
+}
+
+label.error {
+  font-size: 12px;
+  color: red; 
+}
+
+textarea{
+  height: 150px !important;
+}
+
+.button{
   background: #113f67;
   color: #fff;
   font-weight: 500;
@@ -18,31 +65,41 @@
   cursor: pointer;
   font-size: 100%;
   height: 44px;
-  padding: 0 10px;
+  padding: 5px 15px;
 }
 
-.bookMarkEvents img{
-  width: 200px;
-  border-radius: 10px;
-}
-
-.showEvent{
-  background: #113f67;
+.logout{
+  background-color: #DC143C;
   color: #fff;
+  padding: 5px 15px;
+  border: none;
   border-radius: 10px;
-  border-width: 0;
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 5px 10px;
   font-weight: 500;
+  height: 44px;
 }
 
-.text{
-margin: auto;
+.emailInput{
+  width: 300px;
 }
 
-svg,path{
-  cursor: pointer;
+@media screen and (max-width: 767px) {
+
+  .personalData{
+    padding: 0 5%;
+    width: 100%;
+  }
+
+  .newsLetter{
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .main{
+    display: block !important;
+  }
+
+  input{
+    width: 100% !important;
+  }
+
 }

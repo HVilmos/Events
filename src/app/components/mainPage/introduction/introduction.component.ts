@@ -108,7 +108,6 @@ export class IntroductionComponent implements OnInit {
   }
 
   onViewDetailsClick(eventId: string, eventType: string) {
-    // Az átirányítás a 'event/:type/:id' útvonalra, ahol a type a típus, az id pedig az azonosító
     this.router.navigate(['/event', eventType, eventId]);
   }
 }

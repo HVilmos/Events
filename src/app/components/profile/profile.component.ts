@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { AuthService } from 'src/app/service/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-profile',
@@ -15,33 +17,18 @@ export class ProfileComponent implements OnInit {
     phoneNumber: '',
   };
 
-  bookmarkedEvents: any[] = [];
-  selectedEvent: any = null;
-
-  constructor(private userService: UserService, private authService: AuthService, private route: ActivatedRoute) {}
-
+  constructor(private firestore: AngularFirestore, private userService: UserService, private authService: AuthService, private router: Router) {
+  }
   ngOnInit(): void {
     this.userService.getUserProfile().subscribe((profile) => {
       if (profile) {
         this.userProfile = profile;
-        this.loadBookmarkedAndFeaturedEvents();
       }
     });
 
-    this.route.queryParams.subscribe(params => {
-      const eventId = params['eventId'];
-      if (eventId !== null && eventId !== undefined) {
-        this.selectEvent(eventId);
-      }
-    });
   }
 
-  loadBookmarkedAndFeaturedEvents(): void {
-    this.userService.getBookmarkedAndFeaturedEvents().subscribe((events) => {
-      console.log('Bookmarked and Featured events:', events);
-      this.bookmarkedEvents = events;
-    });
-  }
+  
 
   saveProfileToFirestore(): void {
     this.userService.updateUserProfile(this.userProfile).then(() => {
@@ -55,29 +42,45 @@ export class ProfileComponent implements OnInit {
     this.userProfile.phoneNumber = newPhone;
   }
 
-  removeBookmark(eventId: string): void {
-    this.userService.removeBookmark(eventId).then(() => {
-      console.log('Bookmark removed successfully.');
-
-      // Keresse meg az eseményt a bookmarkedEvents tömbben
-      const indexToRemove = this.bookmarkedEvents.findIndex(event => event.eventId === eventId);
-
-      // Ha megtaláljuk az eseményt, távolítsuk el azt a tömbből
-      if (indexToRemove !== -1) {
-        this.bookmarkedEvents.splice(indexToRemove, 1);
-      }
+  logout(): void {
+    this.authService.signOut().then(() => {
+      this.router.navigate(['/home']);
     }).catch((error) => {
-      console.error('Error removing bookmark:', error);
+      console.error('Error logging out:', error);
     });
   }
 
-  selectEvent(eventId: string): void {
-    // Keresse meg az eseményt a bookmarkedEvents tömbben
-    const selectedEvent = this.bookmarkedEvents.find(event => event.eventId === eventId);
+  email: string = '';
 
-    // Ha megtaláljuk az eseményt, állítsuk be a selectedEvent-et
-    if (selectedEvent) {
-      this.selectedEvent = selectedEvent;
+
+  saveEmailToFirestore(email: string): void {
+    if (email) {
+      this.firestore.collection('newsletter').add({ email })
+        .then(() => {
+          alert('Thank you for subscribing!');
+        })
+        .catch((error) => {
+          console.error('Error saving email to Firestore:', error);
+          alert('Failed to subscribe. Please try again later.');
+        });
+    } else {
+      console.error('Email is undefined or empty.');
+      alert('Invalid email address. Please enter a valid email.');
     }
+  }
+  
+
+  onSubmit(form: NgForm): void {
+    const email = form.value.emailInput;
+    if (this.isValidEmail(email)) {
+      this.saveEmailToFirestore(email);
+      form.resetForm(); 
+    } else {
+      alert('Invalid email address!');
+    }
+  }
+
+  isValidEmail(email: string): boolean {
+    return true; 
   }
 }

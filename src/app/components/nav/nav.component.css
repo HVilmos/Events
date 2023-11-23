@@ -1,14 +1,12 @@
 nav{
-    height: 3rem;
 	background: #113f67; 
     color: #fff;
 }
 
 a{
     color: #fff;
+    cursor: pointer;
 }
-
-
 
 .profile{
     text-align: right;
@@ -38,13 +36,19 @@ svg{
 
 }
 
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
 
 .navbar-nav .nav-item .nav-link.active,
 .navbar-nav .nav-item .nav-link:focus,
 .navbar-nav .nav-item .nav-link:hover {
-  background-color: transparent !important;
-  color: inherit !important;
-  border: none !important;
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none !important;
 }
 
 .navbar-brand{
@@ -56,6 +60,39 @@ svg{
 .profile .bi-person-circle.active,
 .profile .bi-person-circle:focus,
 .profile .bi-person-circle:hover {
-  border: none !important;
-  outline: none !important; 
+    border: none !important;
+    outline: none !important; 
 }
+
+@media (max-width: 1000px) {
+    .navbar-nav {
+      background-color: #113f67; 
+    }
+
+    .container-fluid{
+        margin: 0;
+        padding: 0;
+    }
+  
+    .navbar-nav .nav-item {
+      text-align: center;
+    }
+  
+    .navbar-nav .nav-link {
+      padding: 1rem; 
+    }
+
+    .profileSvg{
+        margin-top: -1rem;
+    }
+
+    .navbar-brand{
+        margin-left: 1rem;
+    }
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+  }

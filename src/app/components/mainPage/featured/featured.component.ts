@@ -58,12 +58,6 @@ export class FeaturedComponent implements OnInit {
     this.router.navigate(['/event', eventType, eventId]);
   }
   
-  onBookmarkClick(event: any): void {
-    this.userService.addBookmark(event.key).then(() => {
-      console.log('Esemény sikeresen hozzáadva a könyvjelzőkhöz.');
-    }).catch((error) => {
-      console.error('Hiba az esemény könyvjelzőkhöz adásakor:', error);
-    });
-  }
+  
   
 }

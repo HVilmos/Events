@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class ContactComponent {
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private afs: AngularFirestore) {
+  constructor(private fb: FormBuilder, private afs: AngularFirestore ,private router:Router) {
     this.createForm();
   }
 
@@ -32,9 +33,10 @@ export class ContactComponent {
     `;
     let formRequest = { name, email, message, date, html };
     
-    // Használj AngularFirestore-t
     this.afs.collection('/messages').add(formRequest).then(() => {
       this.form.reset();
     });
   }
+
+  
 }

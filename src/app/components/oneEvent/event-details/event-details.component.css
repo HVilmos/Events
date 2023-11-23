@@ -20,3 +20,19 @@ img{
 p{
     font-size: 22px;
 }
+
+@media screen and (max-width: 1000px) {
+
+    .content{
+        display: block !important;
+    }
+    
+    .imgBox ,.info{
+        width: 100% !important;
+    }
+
+    .imgBox{
+        padding: 0%;
+    }
+
+}
