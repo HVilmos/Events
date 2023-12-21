@@ -8,6 +8,7 @@ import { UserService } from 'src/app/service/user.service';
 interface MyEvent {
   date?: string;
   dateFormatted?: string;
+  category?: string;
 }
 
 @Component({
@@ -16,29 +17,36 @@ interface MyEvent {
   styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent implements OnInit {
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   featuredEvents: any;
 
-  constructor(private base: BaseService, private config: ConfigService, private router: Router, private userService:UserService ) {
-    this.base.getFeaturedData().snapshotChanges().pipe(
-      map((changes) =>
-        changes.map((c) => {
-          const eventData: MyEvent | null = c.payload.val() as MyEvent;
-          if (eventData) {
-            const eventDate = eventData.date ? new Date(eventData.date) : null;
-            eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
-          }
-          return { key: c.payload.key, ...eventData };
-        })
+  constructor(
+    private base: BaseService,
+    private config: ConfigService,
+    private router: Router,
+    private userService: UserService
+  ) {
+    this.base.getData()
+      .snapshotChanges()
+      .pipe(
+        map((changes) =>
+          changes.map((c) => {
+            const eventData: MyEvent | null = c.payload.val() as MyEvent;
+            if (eventData && eventData.category === 'featured') {
+              const eventDate = eventData.date ? new Date(eventData.date) : null;
+              eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
+              return { key: c.payload.key, ...eventData };
+            } else {
+              return null; // Handle the case where category is not 'featured'
+            }
+          })
+        )
       )
-    ).subscribe(adatok => {
-      this.featuredEvents = adatok;
-    });
-
+      .subscribe((adatok) => {
+        this.featuredEvents = adatok.filter((event) => event !== null);
+      });
   }
-
-  
 
   private formatDate(date: Date | null): string {
     if (date) {
@@ -46,18 +54,15 @@ export class FeaturedComponent implements OnInit {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
       };
-      
+
       return date.toLocaleDateString('hu-HU', options);
     }
     return '';
   }
 
-  onViewDetailsClick(eventId: string, eventType: string,) {
+  onViewDetailsClick(eventId: string, eventType: string) {
     this.router.navigate(['/event', eventType, eventId]);
   }
-  
-  
-  
 }

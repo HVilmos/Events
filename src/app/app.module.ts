@@ -11,7 +11,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Environmets } from './environmets';
 import { NavComponents } from './components/nav/nav.component';
 import { HomeComponent } from './components/mainPage/home/home.component';
-import { AdminComponent } from './components/adminPage/admin/admin.component';
 import { EventsComponent } from './components/eventPage/events/events.component';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './components/auth/signin/signin.component';
@@ -23,28 +22,18 @@ import { FeaturedComponent } from './components/mainPage/featured/featured.compo
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BusinessComponent } from './components/eventPage/business/business.component';
-import { SelfImproveComponent } from './components/eventPage/self-improve/self-improve.component';
-import { TechnologyComponent } from './components/eventPage/technology/technology.component';
-import { SportComponent } from './components/eventPage/sport/sport.component';
 import { SelectedCategoriesComponent } from './components/eventPage/selected-categories/selected-categories.component';
-import { AdminBusinessComponent } from './components/adminPage/admin-business/admin-business.component';
-import { AdminFeaturedComponent } from './components/adminPage/admin-featured/admin-featured.component';
-import { AdminSelfImprovmentComponent } from './components/adminPage/admin-self-improvment/admin-self-improvment.component';
-import { AdminTechnologyComponent } from './components/adminPage/admin-technology/admin-technology.component';
-import { AdminSportComponent } from './components/adminPage/admin-sport/admin-sport.component';
-import { AdminCategoriesComponent } from './components/adminPage/admin-categories/admin-categories.component';
 import { OrganizersComponent } from './components/mainPage/organizers/organizers.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TopComponent } from './components/mainPage/top/top.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponents,
     HomeComponent,
-    AdminComponent,
     EventsComponent,
     SigninComponent,
     SignupComponent,
@@ -54,21 +43,12 @@ import { ProfileComponent } from './components/profile/profile.component';
     FeaturedComponent,
     ForgotPasswordComponent,
     ContactComponent,
-    BusinessComponent,
-    SelfImproveComponent,
-    TechnologyComponent,
-    SportComponent,
     SelectedCategoriesComponent,
-    AdminBusinessComponent,
-    AdminFeaturedComponent,
-    AdminSelfImprovmentComponent,
-    AdminTechnologyComponent,
-    AdminSportComponent,
-    AdminCategoriesComponent,
     OrganizersComponent,
     FooterComponent,
     EventDetailsComponent,
     ProfileComponent,
+    TopComponent,
 
   ],
   imports: [

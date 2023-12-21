@@ -1,6 +1,6 @@
 .content{
     margin-top: 4rem;
-    height: 60vh;
+    height: 70vh;
 }
 
 .imgBox{
@@ -25,6 +25,7 @@ p{
 
     .content{
         display: block !important;
+        height: auto;
     }
     
     .imgBox ,.info{

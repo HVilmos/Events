@@ -1,6 +1,89 @@
 
-<app-categories></app-categories>
-<app-business></app-business>
-<app-self-improve></app-self-improve>
-<app-technology></app-technology>
-<app-sport></app-sport>
+
+<div class="container mt-5 d-flex main" >
+  <div class="text">
+  <h2 class="">Kategóriák</h2>
+  <p>Fedezd fel a kategóriáinkat és találd meg a számodra legizgalmasabb eseményeket</p>
+  </div>
+  <div class="d-flex justify-content-center boxes">
+      <div class="box text-center" (click)="onCategoryClick('business')">
+          <img style="height: 30px; width: 30px;" src="https://img.icons8.com/cotton/64/stack-of-money--v3.png" alt="stack-of-money--v3"/>
+          <p>Üzlet és gazdaság</p>
+      </div>
+      <div class="box text-center" (click)="onCategoryClick('selfimprovement')">
+          <img style="height: 30px; width: 30px;" src="https://img.icons8.com/color-glass/48/read.png" alt="read"/>
+          <p>Tanulás és Önfejlesztés</p>
+      </div>
+      <div class="box text-center" (click)="onCategoryClick('technology')">
+          <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 100 100">
+              <path fill="#4b4dff" d="M52,83L52,83c-6.075,0-11-4.925-11-11V57h22v15C63,78.075,58.075,83,52,83z"></path><circle cx="52" cy="43" r="22" fill="#ff8405"></circle><rect width="15.625" height="4" x="44" y="70.625" fill="#edf7f5"></rect><rect width="15.625" height="4" x="44" y="62.625" fill="#edf7f5"></rect><path fill="#4343bf" d="M52,87c-7.72,0-14-6.28-14-14v-9.293C31.174,59.08,27,51.3,27,43c0-13.785,11.215-25,25-25 s25,11.215,25,25c0,8.3-4.174,16.08-11,20.707V73C66,80.72,59.72,87,52,87z M52,24c-10.477,0-19,8.523-19,19 c0,6.757,3.642,13.062,9.303,16.453L44,60.319V73c0,4.411,3.589,8,8,8s8-3.589,8-8V60.319l1.497-0.866 C67.358,56.062,71,49.757,71,43C71,32.523,62.477,24,52,24z"></path><path fill="#3abcf8" d="M51.302,91V81C54.995,81,58,77.995,58,74.302V59.772l2.495-1.443 c5.677-3.285,9.203-9.391,9.203-15.933c0-10.144-8.605-18.368-18.749-18.368L51,14c15.658,0,28.698,12.738,28.698,28.396 c0,9.102-4.418,17.652-11.698,22.962v8.943C68,83.309,60.309,91,51.302,91z"></path><rect width="4" height="9.899" x="33" y="10.05" fill="#ff8405" transform="rotate(-45.001 35 15)"></rect><rect width="9" height="4" x="15" y="39" fill="#ff8405"></rect><rect width="4" height="8.602" x="22.5" y="21.199" fill="#ff8405" transform="rotate(-54.463 24.5 25.301)"></rect>
+              </svg>
+              <p>Technológia és Innováció</p>
+      </div>         
+      
+      <div class="box text-center" (click)="onCategoryClick('sportandhealth')">
+          <img style="height: 30px; width: 30px;" src="https://img.icons8.com/nolan/64/heart-with-pulse.png" alt="heart-with-pulse"/>
+          <p>Sport és egészség</p>
+      </div>
+      <div class="box text-center" (click)="onCategoryClick('')">
+          <img style="height: 30px; width: 30px;" src="https://img.icons8.com/color/48/more.png" alt="more"/> 
+          <p>Összes<br>esemény</p>
+      </div>       
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content-center mt-4">
+    <div class="me-3">
+      <label for="price">Ár</label>
+      <select class="form-select" [formControl]="priceFilter">
+        <option value="0">Alapértelmezett</option>
+        <option value="1">Ingyenes</option>
+        <option value="2">3000 FT alatt</option>
+        <option value="3">3000 ft - 10000 ft</option>
+        <option value="4">10000 ft felett</option>
+      </select>
+    </div>
+
+    <div class="me-3">
+      <label for="sortBy">Szűrők</label>
+      <select class="form-select" [formControl]="sortByFilter">
+        <option value="Default">Alapértelmezett</option>
+        <option value="PriceLowToHigh">Ár szerint növekvő</option>
+        <option value="PriceHighToLow">Ár szerint csökkenő</option>
+      </select>
+    </div>
+
+    <div class="me-3">
+      <label for="location">Helyszín</label>
+      <select class="form-select" [formControl]="locationFilter">
+        <option value="Any">Bárhol</option>
+        <option value="Budapest">Budapest</option>
+        <option value="Online">Online</option>
+        <option value="Other">Vidék</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+  <div class="container mt-5" >
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let event of events">
+          <div class="card d-flex flex-column align-items-stretch">
+            <img class="" [src]="event.imgUrl" alt="">
+            <div class="flex-grow-1">
+              <h5 class="name">{{event.name}}</h5>
+              <p>{{event.description}}</p>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg> {{event.place}}</p>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+              </svg> {{event.dateFormatted}}</p>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16"><path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/><path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+              </svg> {{event.price}} Ft</p>
+            </div>
+            <button class="button-9 align-self-start" (click)="onViewDetailsClick(event.key ?? '', 'events')">Megtekint</button>
+          </div>
+      </div>
+    </div>
