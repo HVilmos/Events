@@ -1,7 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');body{
-    font-family: 'Poppins', sans-serif;}
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 body{
-    background-color: #edecec;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("src/assets/main.png");  
+    background-size: cover;
+    background-position: center;
+
+}
+
+.blur{
+    backdrop-filter: blur("50px");
 }

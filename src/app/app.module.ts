@@ -22,12 +22,14 @@ import { FeaturedComponent } from './components/mainPage/featured/featured.compo
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SelectedCategoriesComponent } from './components/eventPage/selected-categories/selected-categories.component';
 import { OrganizersComponent } from './components/mainPage/organizers/organizers.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TopComponent } from './components/mainPage/top/top.component';
+import { NewsletterComponent } from './components/mainPage/newsletter/newsletter.component';
+import { CoursesComponent } from './components/coursesPage/courses/courses.component';
+import { FreeEbookComponent } from './components/coursesPage/free-ebook/free-ebook.component';
 
 @NgModule({
   declarations: [
@@ -43,12 +45,14 @@ import { TopComponent } from './components/mainPage/top/top.component';
     FeaturedComponent,
     ForgotPasswordComponent,
     ContactComponent,
-    SelectedCategoriesComponent,
     OrganizersComponent,
     FooterComponent,
     EventDetailsComponent,
     ProfileComponent,
     TopComponent,
+    NewsletterComponent,
+    CoursesComponent,
+    FreeEbookComponent,
 
   ],
   imports: [

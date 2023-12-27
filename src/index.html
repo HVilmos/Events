@@ -6,8 +6,21 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-image: url("src/assets/blur.png");  
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+    }
+
+    .blur {
+        backdrop-filter: blur(50px);
+    }
+</style>
 </head>
-<body>
-  <app-root></app-root>
+<body class="blur">
+<app-root></app-root>
 </body>
 </html>

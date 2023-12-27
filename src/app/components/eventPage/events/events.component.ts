@@ -3,18 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
-
-interface MyEvents {
-  date?: string;
-  dateFormatted?: string;
-  category?: string;
-  imgUrl?: string;
-  name?: string;
-  description?: string;
-  place?: string;
-  price?: number;
-  key?: string;
-}
+import { MyEvents } from 'src/app/model/event.model';
 
 @Component({
   selector: 'app-events',
@@ -24,7 +13,7 @@ interface MyEvents {
 export class EventsComponent implements OnInit {
 
   allEvents: MyEvents[] = [];
-  events: MyEvents[] = [];
+  filteredEvents: MyEvents[] = [];
   selectedEventCategory: string | null = null;
 
   priceFilter = new FormControl(0);
@@ -62,14 +51,6 @@ export class EventsComponent implements OnInit {
     this.locationFilter.valueChanges.subscribe(() => this.applyFilters());
   }
 
-  private filterEventsByCategory() {
-    if (!this.selectedEventCategory) {
-      this.events = [...this.allEvents];
-    } else {
-      this.events = this.allEvents.filter((event) => event.category === this.selectedEventCategory && event.key !== undefined);
-    }
-  }
-
   private formatDate(date: Date | null): string {
     if (date) {
       const options: Intl.DateTimeFormatOptions = {
@@ -83,51 +64,47 @@ export class EventsComponent implements OnInit {
     return '';
   }
 
-  private priceFilterCondition(event: MyEvents): boolean {
-    const selectedPrice = this.priceFilter.value;
-    return (
-      selectedPrice === 0 ||
-      (selectedPrice === 1 && event.price === 0) ||
-      (selectedPrice === 2 && (event.price || 0) < 3000) ||
-      (selectedPrice === 3 && (event.price || 0) >= 3000 && (event.price || 0) <= 10000) ||
-      (selectedPrice === 4 && (event.price || 0) > 10000)
-    );
+  priceFilterCondition(event: MyEvents, selectedPriceOption: number): boolean {
+    const eventPrice = event.price !== undefined ? event.price : 0;
+
+    switch (selectedPriceOption) {
+      case 0:
+        return true;
+      case 1:
+        return eventPrice === 0;
+      case 2:
+        return eventPrice < 3000;
+      case 3:
+        return eventPrice >= 3000 && eventPrice <= 10000;
+      case 4:
+        return eventPrice > 10000;
+      default:
+        return true;
+    }
   }
 
-  private sortByFilterCondition(event: MyEvents): boolean {
-    // Implement your sorting logic here
-    return true;
-  }
+  filterEventsByCategory(events: MyEvents[]) {
+    const selectedPriceOption = this.priceFilter.value || 0;
 
-  private locationFilterCondition(event: MyEvents): boolean {
-    const selectedLocation = this.locationFilter.value;
-    return (
-      selectedLocation === 'Any' ||
-      (selectedLocation === 'Budapest' && event.place === 'Budapest') ||
-      (selectedLocation === 'Online' && event.place === 'Online') ||
-      (selectedLocation === 'Other' && event.place !== 'Budapest' && event.place !== 'Online')
-    );
+    if (!this.selectedEventCategory) {
+      this.filteredEvents = events.filter((event) => this.priceFilterCondition(event, selectedPriceOption));
+    } else {
+      this.filteredEvents = events.filter((event) => event.category === this.selectedEventCategory && event.key !== undefined);
+    }
   }
 
   applyFilters() {
-    // Clone the original array to avoid modifying the original data
-    this.events = [...this.allEvents];
+    console.log('Applying filters...');
 
-    // Ár szűrő
-    this.events = this.events.filter((event) => this.priceFilterCondition(event));
+    this.filteredEvents = [...this.allEvents];
 
-    // Ár szerinti rendezés
-    if (this.sortByFilter.value === 'PriceLowToHigh') {
-      this.events.sort((a, b) => (a.price || 0) - (b.price || 0));
-    } else if (this.sortByFilter.value === 'PriceHighToLow') {
-      this.events.sort((a, b) => (b.price || 0) - (a.price || 0));
-    }
+    const selectedPriceOption = this.priceFilter.value || 0;
 
-    // Helyszín szűrő
-    this.events = this.events.filter((event) => this.locationFilterCondition(event));
+    this.filteredEvents = this.filteredEvents.filter((event) => this.priceFilterCondition(event, selectedPriceOption));
 
-    // Kategória szűrő
-    this.filterEventsByCategory();
+    console.log('Filtered events:', this.filteredEvents);
+
+    this.filterEventsByCategory(this.filteredEvents);
   }
 
   onCategoryClick(category: string) {

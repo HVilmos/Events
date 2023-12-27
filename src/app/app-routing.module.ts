@@ -7,10 +7,10 @@ import { SigninComponent } from './components/auth/signin/signin.component';
 import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { SelectedCategoriesComponent } from './components/eventPage/selected-categories/selected-categories.component';
 import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CoursesComponent } from './components/coursesPage/courses/courses.component';
 
 
 
@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '' },
   { path: 'events', component: EventsComponent },
+  { path: 'courses', component: CoursesComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'verifyemail', component: VerifyEmailComponent },

@@ -4,13 +4,16 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    padding: 5rem 0;
+    padding: 5rem 0 0 0;
+
 
 }
 
 .content {
     display: flex;
     justify-content: center;
+    width: 100%;
+
 }
 
 .container div {
@@ -39,10 +42,11 @@
     color: #ffffff;
     width: 40%;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    height: 35rem;
 }
 
 .sideCard{
-    width: 20%;
+    width: 20% ;
 }
 
 .sideCard img {
@@ -51,14 +55,10 @@
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-.sideCardLeft img{
+.sideCardLeft img, 
+.sideCardRight img{
     height: 50%;
 }
-
-.sideCardRight img{
-    height: 60%;
-}
-
 
 .mainCardContent {
     position: absolute;

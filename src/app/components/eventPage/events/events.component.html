@@ -36,7 +36,7 @@
   <div class="d-flex justify-content-center mt-4">
     <div class="me-3">
       <label for="price">Ár</label>
-      <select class="form-select" [formControl]="priceFilter">
+      <select class="form-select" id="price" [formControl]="priceFilter">
         <option value="0">Alapértelmezett</option>
         <option value="1">Ingyenes</option>
         <option value="2">3000 FT alatt</option>
@@ -47,7 +47,7 @@
 
     <div class="me-3">
       <label for="sortBy">Szűrők</label>
-      <select class="form-select" [formControl]="sortByFilter">
+      <select class="form-select"  id="sortBy">
         <option value="Default">Alapértelmezett</option>
         <option value="PriceLowToHigh">Ár szerint növekvő</option>
         <option value="PriceHighToLow">Ár szerint csökkenő</option>
@@ -56,7 +56,7 @@
 
     <div class="me-3">
       <label for="location">Helyszín</label>
-      <select class="form-select" [formControl]="locationFilter">
+      <select class="form-select"  id="location">
         <option value="Any">Bárhol</option>
         <option value="Budapest">Budapest</option>
         <option value="Online">Online</option>
@@ -66,10 +66,10 @@
   </div>
 </div>
 
-  <div class="container mt-5" >
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let event of events">
-          <div class="card d-flex flex-column align-items-stretch">
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let event of filteredEvents">
+      <div class="card d-flex flex-column align-items-stretch">
             <img class="" [src]="event.imgUrl" alt="">
             <div class="flex-grow-1">
               <h5 class="name">{{event.name}}</h5>
@@ -79,7 +79,7 @@
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
               </svg> {{event.place}}</p>
               <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-              </svg> {{event.dateFormatted}}</p>
+              </svg> {{event.date}}</p>
               <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16"><path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/><path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
               </svg> {{event.price}} Ft</p>
             </div>

@@ -1,0 +1,13 @@
+<div class="main text-center" >
+    <div class="content">
+        <div class="">
+            <img width="60" height="60" src="https://img.icons8.com/fluency/48/new-post.png" alt="new-post"/>
+            <h1>Iratkozzon fel hírlevelünkre</h1>
+            <h6>Mindig az elsők között értesüljön a legújabb híreinkről és exkluzív ajánlatainkról.</h6>
+        </div>
+        <form class="d-flex flex-column align-items-center " #newsletterForm="ngForm" (ngSubmit)="onSubmit(newsletterForm)">
+            <input type="text" class="form-control mb-3 emailInput w-25" id="emailNewsLetter" autocomplete="email" placeholder="pelda@gmail.com" [(ngModel)]="email" name="emailInput" required>
+            <button type="submit" class="button">Feliratkozás</button>
+        </form>
+    </div>
+</div>
