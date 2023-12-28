@@ -39,15 +39,15 @@
       <select class="form-select" id="price" [formControl]="priceFilter">
         <option value="0">Alapértelmezett</option>
         <option value="1">Ingyenes</option>
-        <option value="2">3000 FT alatt</option>
-        <option value="3">3000 ft - 10000 ft</option>
+        <option value="2">5000 FT alatt</option>
+        <option value="3">5000 ft - 10000 ft</option>
         <option value="4">10000 ft felett</option>
       </select>
     </div>
 
     <div class="me-3">
       <label for="sortBy">Szűrők</label>
-      <select class="form-select"  id="sortBy">
+      <select class="form-select" id="sortBy" [formControl]="sortByFilter">
         <option value="Default">Alapértelmezett</option>
         <option value="PriceLowToHigh">Ár szerint növekvő</option>
         <option value="PriceHighToLow">Ár szerint csökkenő</option>
@@ -56,7 +56,7 @@
 
     <div class="me-3">
       <label for="location">Helyszín</label>
-      <select class="form-select"  id="location">
+      <select class="form-select" id="location" [formControl]="locationFilter">
         <option value="Any">Bárhol</option>
         <option value="Budapest">Budapest</option>
         <option value="Online">Online</option>
@@ -68,7 +68,7 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let event of filteredEvents">
+    <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let event of events">
       <div class="card d-flex flex-column align-items-stretch">
             <img class="" [src]="event.imgUrl" alt="">
             <div class="flex-grow-1">

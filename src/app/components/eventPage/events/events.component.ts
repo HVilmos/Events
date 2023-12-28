@@ -11,100 +11,99 @@ import { MyEvents } from 'src/app/model/event.model';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-
   allEvents: MyEvents[] = [];
-  filteredEvents: MyEvents[] = [];
+  events: MyEvents[] = [];
   selectedEventCategory: string | null = null;
 
-  priceFilter = new FormControl(0);
+  priceFilter = new FormControl('0');
   sortByFilter = new FormControl('Default');
   locationFilter = new FormControl('Any');
 
-  constructor(private base: BaseService, private router: Router) {
-    this.base.getData()
-      .snapshotChanges()
-      .pipe(
-        map((changes) =>
-          changes.map((c) => {
-            const eventData: MyEvents | null = c.payload.val() as MyEvents;
-            if (eventData) {
-              const eventDate = eventData.date ? new Date(eventData.date) : null;
-              eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
-            }
-            return { key: c.payload.key, ...eventData };
-          })
-        )
-      )
-      .subscribe((adatok) => {
-        this.allEvents = adatok.map((eventData) => {
-          const eventDate = eventData.date ? new Date(eventData.date) : null;
-          eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
-          return { ...eventData, key: eventData.key } as MyEvents;
-        });
-        this.applyFilters();
-      });
-  }
+  constructor(private base: BaseService, private router: Router) {}
 
   ngOnInit() {
+    this.base.getData().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() } as MyEvents))
+      )
+    ).subscribe(data => {
+      this.allEvents = data;
+      this.applyFilters();  // Alapértelmezett szűrők alkalmazása az adatok betöltésekor
+    });
+
+    // Szűrők változásainak figyelése
     this.priceFilter.valueChanges.subscribe(() => this.applyFilters());
     this.sortByFilter.valueChanges.subscribe(() => this.applyFilters());
     this.locationFilter.valueChanges.subscribe(() => this.applyFilters());
   }
 
-  private formatDate(date: Date | null): string {
-    if (date) {
-      const options: Intl.DateTimeFormatOptions = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      };
-      return date.toLocaleDateString('hu-HU', options);
-    }
-    return '';
+  applyFilters() {
+    this.filterEventsByCategory();
   }
 
-  priceFilterCondition(event: MyEvents, selectedPriceOption: number): boolean {
-    const eventPrice = event.price !== undefined ? event.price : 0;
-
-    switch (selectedPriceOption) {
-      case 0:
-        return true;
-      case 1:
-        return eventPrice === 0;
-      case 2:
-        return eventPrice < 3000;
-      case 3:
-        return eventPrice >= 3000 && eventPrice <= 10000;
-      case 4:
-        return eventPrice > 10000;
-      default:
-        return true;
-    }
-  }
-
-  filterEventsByCategory(events: MyEvents[]) {
-    const selectedPriceOption = this.priceFilter.value || 0;
+  filterEventsByCategory() {
+    const selectedPriceOption = this.priceFilter.value || '0';
+    const selectedLocationOption = this.locationFilter.value || 'Any';
 
     if (!this.selectedEventCategory) {
-      this.filteredEvents = events.filter((event) => this.priceFilterCondition(event, selectedPriceOption));
+      this.events = this.allEvents.filter(
+        event =>
+          this.priceFilterCondition(event, selectedPriceOption) &&
+          this.locationFilterCondition(event, selectedLocationOption)
+      );
     } else {
-      this.filteredEvents = events.filter((event) => event.category === this.selectedEventCategory && event.key !== undefined);
+      this.events = this.allEvents.filter(
+        event =>
+          event.category === this.selectedEventCategory &&
+          this.priceFilterCondition(event, selectedPriceOption) &&
+          this.locationFilterCondition(event, selectedLocationOption)
+      );
+    }
+
+    // Ha rendezés szűrő is van kiválasztva, alkalmazd a rendezést
+    if (this.sortByFilter.value !== 'Default') {
+      this.sortEvents();
     }
   }
 
-  applyFilters() {
-    console.log('Applying filters...');
+  priceFilterCondition(event: MyEvents, selectedPriceOption: string): boolean {
+    const eventPrice = event.price ? +event.price : 0;
 
-    this.filteredEvents = [...this.allEvents];
+    return (
+      selectedPriceOption === '0' ||
+      (selectedPriceOption === '1' && eventPrice === 0) ||
+      (selectedPriceOption === '2' && eventPrice >= 1 && eventPrice <= 4999) ||
+      (selectedPriceOption === '3' && eventPrice >= 5000 && eventPrice <= 9999) ||
+      (selectedPriceOption === '4' && eventPrice >= 10000)
+    );
+  }
 
-    const selectedPriceOption = this.priceFilter.value || 0;
+  locationFilterCondition(event: MyEvents, selectedLocationOption: string): boolean {
+    return (
+      selectedLocationOption === 'Any' ||
+      (selectedLocationOption === 'Budapest' && event.place === 'Budapest') ||
+      (selectedLocationOption === 'Online' && event.place === 'Online') ||
+      (selectedLocationOption === 'Other' && event.place !== 'Budapest' && event.place !== 'Online')
+    );
+  }
 
-    this.filteredEvents = this.filteredEvents.filter((event) => this.priceFilterCondition(event, selectedPriceOption));
+  sortEvents() {
+    const sortBy = this.sortByFilter.value;
+    const eventsToSort = [...this.events];
 
-    console.log('Filtered events:', this.filteredEvents);
-
-    this.filterEventsByCategory(this.filteredEvents);
+    switch (sortBy) {
+      case 'Default':
+        this.events = [...this.allEvents];
+        break;
+      case 'PriceLowToHigh':
+        this.events = eventsToSort.sort((a, b) => (a.price || 0) - (b.price || 0));
+        break;
+      case 'PriceHighToLow':
+        this.events = eventsToSort.sort((a, b) => (b.price || 0) - (a.price || 0));
+        break;
+      default:
+        break;
+    }
   }
 
   onCategoryClick(category: string) {
