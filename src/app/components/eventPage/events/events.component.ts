@@ -18,7 +18,7 @@ export class EventsComponent implements OnInit {
   priceFilter = new FormControl('0');
   sortByFilter = new FormControl('Default');
   locationFilter = new FormControl('Any');
-  
+  searchFormControl = new FormControl();  // Új FormControl a kereséshez
 
   constructor(private base: BaseService, private router: Router) {}
 
@@ -36,17 +36,38 @@ export class EventsComponent implements OnInit {
     this.priceFilter.valueChanges.subscribe(() => this.applyFilters());
     this.sortByFilter.valueChanges.subscribe(() => this.applyFilters());
     this.locationFilter.valueChanges.subscribe(() => this.applyFilters());
+    this.searchFormControl.valueChanges.subscribe(() => this.onSearchInputChange());
   }
 
   applyFilters() {
     this.filterEventsByCategory();
   }
 
+  onSearchInputChange() {
+    this.filterEventsBySearchTerm();
+  }
+
+  filterEventsBySearchTerm() {
+    const searchTerm = this.searchFormControl.value?.toLowerCase() || '';
+  
+    this.events = this.allEvents.filter(
+      event =>
+        (event.name && event.name.toLowerCase().includes(searchTerm)) ||
+        (event.description && event.description.toLowerCase().includes(searchTerm)) ||
+        (event.place && event.place.toLowerCase().includes(searchTerm))
+    );
+  
+    // Ha rendezés szűrő is van kiválasztva, alkalmazd a rendezést
+    if (this.sortByFilter.value !== 'Default') {
+      this.sortEvents();
+    }
+  }
+
   filterEventsByCategory() {
     const selectedPriceOption = this.priceFilter.value || '0';
     const selectedLocationOption = this.locationFilter.value || 'Any';
 
-    if (!this.selectedEventCategory) {
+    if (!this.selectedEventCategory || this.selectedEventCategory === '') {
       this.events = this.allEvents.filter(
         event =>
           this.priceFilterCondition(event, selectedPriceOption) &&
