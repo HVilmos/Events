@@ -2,7 +2,7 @@
     max-width: 450px;
     padding: 30px;
     border-radius: 6px;
-    background: #FFF;
+    background: transparent;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

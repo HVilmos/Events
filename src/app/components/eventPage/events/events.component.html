@@ -33,7 +33,13 @@
 </div>
 
 <div class="container">
-  <div class="d-flex justify-content-center mt-4">
+  <div class="d-flex justify-content-center filters mt-4">
+
+    <div class="me-3">
+      <label for="search">Keresés</label>
+      <input class="form-control border-end-0 border rounded-pill" type="search" placeholder="pl.: üzlet" id="search">
+    </div>
+
     <div class="me-3">
       <label for="price">Ár</label>
       <select class="form-select" id="price" [formControl]="priceFilter">

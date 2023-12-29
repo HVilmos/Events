@@ -18,6 +18,7 @@ export class EventsComponent implements OnInit {
   priceFilter = new FormControl('0');
   sortByFilter = new FormControl('Default');
   locationFilter = new FormControl('Any');
+  
 
   constructor(private base: BaseService, private router: Router) {}
 
