@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { MyEvents } from 'src/app/model/event.model';
 
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -18,7 +19,7 @@ export class EventsComponent implements OnInit {
   priceFilter = new FormControl('0');
   sortByFilter = new FormControl('Default');
   locationFilter = new FormControl('Any');
-  searchFormControl = new FormControl();  // Új FormControl a kereséshez
+  searchFormControl = new FormControl();  
 
   constructor(private base: BaseService, private router: Router) {}
 
@@ -29,10 +30,10 @@ export class EventsComponent implements OnInit {
       )
     ).subscribe(data => {
       this.allEvents = data;
-      this.applyFilters();  // Alapértelmezett szűrők alkalmazása az adatok betöltésekor
+      this.applyFilters();  
     });
 
-    // Szűrők változásainak figyelése
+
     this.priceFilter.valueChanges.subscribe(() => this.applyFilters());
     this.sortByFilter.valueChanges.subscribe(() => this.applyFilters());
     this.locationFilter.valueChanges.subscribe(() => this.applyFilters());
@@ -57,7 +58,6 @@ export class EventsComponent implements OnInit {
         (event.place && event.place.toLowerCase().includes(searchTerm))
     );
   
-    // Ha rendezés szűrő is van kiválasztva, alkalmazd a rendezést
     if (this.sortByFilter.value !== 'Default') {
       this.sortEvents();
     }
@@ -82,7 +82,6 @@ export class EventsComponent implements OnInit {
       );
     }
 
-    // Ha rendezés szűrő is van kiválasztva, alkalmazd a rendezést
     if (this.sortByFilter.value !== 'Default') {
       this.sortEvents();
     }
@@ -136,4 +135,6 @@ export class EventsComponent implements OnInit {
   onViewDetailsClick(eventId: string, eventType: string) {
     this.router.navigate(['/event', eventType, eventId]);
   }
+
+ 
 }

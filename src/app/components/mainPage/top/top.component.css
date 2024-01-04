@@ -71,3 +71,55 @@ button{
     font-weight: 600;
 
 }
+
+@media screen and (max-width: 767px) {
+
+    .content{
+        display: block !important;
+    }
+
+    .sideCard, .mainCard{
+        width: 100%;
+        margin: 0 !important;
+        padding: 2% 5%;
+        margin-bottom: 5rem;
+    }
+
+    .mainCard{
+        margin: 2rem !important;
+        width: auto;
+    }
+
+    .sideCard img{
+        height: 50%;
+        width: 50%;
+    }
+
+    .container{
+        text-align:  center;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+   
+    .sideCard img{
+        height: auto;
+    }
+
+    .mainCard{
+        height: 30rem;
+    }
+
+  
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+   
+    .sideCard img{
+        height: auto;
+    }
+    
+}

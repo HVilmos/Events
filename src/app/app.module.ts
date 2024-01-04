@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
-import { CategoriesComponent } from './components/mainPage/categories/categories.component';
 import { IntroductionComponent } from './components/mainPage/introduction/introduction.component';
 import { FeaturedComponent } from './components/mainPage/featured/featured.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
@@ -40,7 +39,6 @@ import { FreeEbookComponent } from './components/coursesPage/free-ebook/free-ebo
     SigninComponent,
     SignupComponent,
     VerifyEmailComponent,
-    CategoriesComponent,
     IntroductionComponent,
     FeaturedComponent,
     ForgotPasswordComponent,

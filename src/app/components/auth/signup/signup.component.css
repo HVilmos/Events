@@ -1,5 +1,11 @@
 .content{
     width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 62px);
+
 }
 
 .form{
@@ -8,10 +14,6 @@
     padding: 30px;
     border-radius: 6px;
     background: transparent;
-}
-
-.row{
-    height: 70vh !important;
 }
 
 header{
@@ -139,6 +141,10 @@ a.google span{
     text-align: center;
 }
 
+p{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .login-with-google-btn {      
     padding: 12px 16px 12px 42px;
@@ -160,9 +166,8 @@ a.google span{
     
   }
 
-  p{
-    text-decoration: underline;
-    cursor: pointer;
-  }
+
+
+  
 
   

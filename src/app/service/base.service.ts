@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { MyEvents } from '../model/event.model';
 
 
 @Injectable({
@@ -10,6 +11,8 @@ export class BaseService {
   addMessage(_arg0: string) {
     throw new Error('Method not implemented.');
   }
+
+
 
   eventsData: AngularFireList<Event>
   
@@ -22,9 +25,6 @@ export class BaseService {
   getData(){
     return this.eventsData
   }
-
-
-
 
   //business
   deleteData(key:any){

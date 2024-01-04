@@ -4,6 +4,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  margin-bottom: 10rem;
 }
 
 .bg {
@@ -81,16 +82,30 @@ textarea{
 
 @media screen and (max-width: 767px) {
   .main {
-      margin-top: 2rem !important;
+    display: block  !important;  
   }
 
-  .left {
-      display: none;
+  .bg{
+    width: 100%;
+    backdrop-filter: blur(0px);
   }
 
-  .right {
-      height: auto;
-      width: 100%;
-      padding: 3rem 1rem;
+  .left h1{
+    font-size: 2rem;
   }
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .left h1{
+    font-size: 2rem !important;
+  }
+
+  .left{
+    padding: 2rem;
+  }
+
+ 
 }

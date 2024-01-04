@@ -1,33 +1,28 @@
-<div class="row justify-content-center content">
-<div class="form login">
-  <div class="form-content">
+<div class="row content">
+  <div class="form login">
+    <div class="form-content">
       <header>Bejelentkezés</header>
-          <div class="field input-field">
-              <input type="email" [(ngModel)]="email" placeholder="Email" class="input" name="email" autocomplete="email">
-          </div>
-          <div class="field input-field">
-              <input type="password" [(ngModel)]="password" placeholder="Jelszó" class="password" name="password">
-          </div>
-          <div class="form-link">
-              <button routerLink="/forgotpassword" type="button" class="forgot" >
-                Elfelejtette a jelszót?</button>
-          </div>
-          <div class="field button-field">
-              <button [disabled]="validUser()" (click)="signIn()">Bejelentkezés</button>
-          </div>
-      <div class="form-link">
-          <span>Nincs még fiókod? <button routerLink="/signup" type="button" class="register">
-            Regisztrálj</button></span>
+      <div class="field input-field">
+        <input type="email" [(ngModel)]="email" placeholder="Email" class="input" name="email" autocomplete="email">
       </div>
+      <div class="field input-field">
+        <input type="password" [(ngModel)]="password" placeholder="Jelszó" class="password" name="password">
+      </div>
+      <div class="form-link">
+        <button routerLink="/forgotpassword" type="button" class="forgot">Elfelejtette a jelszót?</button>
+      </div>
+      <div class="field button-field">
+        <button [disabled]="validUser()" (click)="signIn()">Bejelentkezés</button>
+      </div>
+      <div class="form-link">
+        <span>Nincs még fiókod? <button routerLink="/signup" type="button" class="register">Regisztrálj</button></span>
+      </div>
+    </div>
+
+    <div class="media-options mt-5">
+      <button (click)="googleAuth()" class="login-with-google-btn">
+        Google Bejelentkezés
+      </button>
+    </div>
   </div>
-  <div class="line"></div>
-  
-  <div class="media-options">
-   
-    <button (click)="googleAuth()" class="login-with-google-btn">
-      Google Bejelentkezés
-    </button>
-      
-  </div>
-</div>
 </div>
