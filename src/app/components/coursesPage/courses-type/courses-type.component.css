@@ -120,6 +120,10 @@ p{
   .box:first-child img{
     height: 50%;
   }
+
+  .container{
+    padding-top: 1rem;
+  }
   
 }
 
@@ -127,6 +131,10 @@ p{
   .container{
     justify-content: center;
     display: contents;
+  }
+
+  h1{
+    padding-top: 2rem;
   }
 
   .box , .box:nth-child(3)  {
