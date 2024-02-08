@@ -28,7 +28,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { TopComponent } from './components/mainPage/top/top.component';
 import { NewsletterComponent } from './components/mainPage/newsletter/newsletter.component';
 import { CoursesComponent } from './components/coursesPage/courses/courses.component';
-import { FreeEbookComponent } from './components/coursesPage/free-ebook/free-ebook.component';
+import { CardsComponent } from './components/mainPage/cards/cards.component';
+import { CoursesTypeComponent } from './components/coursesPage/courses-type/courses-type.component';
+import { EbooksComponent } from './components/coursesPage/ebooks/ebooks.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { FreeEbookComponent } from './components/coursesPage/free-ebook/free-ebo
     TopComponent,
     NewsletterComponent,
     CoursesComponent,
-    FreeEbookComponent,
+    CardsComponent,
+    CoursesTypeComponent,
+    EbooksComponent,
 
   ],
   imports: [

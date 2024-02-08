@@ -1,0 +1,42 @@
+.serviceCard{
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    margin: 0 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    
+}
+
+h3{
+    margin-top: 2rem;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.list p{
+    background-color: rgb(236, 245, 245);
+    border-radius: 20px;
+    padding: 5px 12px;
+    color: #153fd7	;
+}
+
+.list p{
+    margin-right: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
+
+@media screen and (max-width: 767px) {
+    .d-flex{
+        display: block !important;
+    }
+
+    .serviceCard{
+        width: 90%;
+        margin: auto auto 4rem auto;
+    }
+
+  
+}

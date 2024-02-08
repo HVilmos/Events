@@ -1,12 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #113f67;">
   <div class="container-fluid">
+    <div class="logo">
     <a class="navbar-brand" href="#">Eventsync</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+  </div>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav navList">
         <li class="nav-item">
           <a class="nav-link" routerLink="home">Főoldal</a>
         </li>
@@ -14,20 +16,15 @@
           <a class="nav-link" routerLink="events">Események</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="courses">Ebookok</a>
+          <a class="nav-link" routerLink="courses">Oktatás</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="contact">Kapcsolat</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="navigateToProfile()">Profil</a>
-        </li>
-        <li class="nav-item" *ngIf="isAdmin">
-          <a class="nav-link" routerLink="adminFeatured">Admin</a>
-        </li>
       </ul>
+    </div>
 
-      <ul class="navbar-nav ms-auto profileSvg">
+      <ul class="navbar-nav profileSvg">
         <li class="nav-item">
           <a class="nav-link" routerLink="signup" (click)="navigateToProfile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -37,6 +34,5 @@
           </a>
         </li>
       </ul>
-    </div>
   </div>
 </nav>

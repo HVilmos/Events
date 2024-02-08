@@ -22,7 +22,14 @@ svg{
 }
 
 .navList {
-    width: 90%;
+    width: 80%;
+    justify-content: center;
+}
+
+.profileSvg{
+    width: 10%;
+    justify-content: end;
+
 }
 
 .navList ul li {
@@ -33,7 +40,6 @@ svg{
 
 .logo a{
     font-weight: 500;  
-
 }
 
 .navbar-toggler {
@@ -84,6 +90,7 @@ svg{
 
     .profileSvg{
         margin-top: -1rem;
+        margin-right: 1rem;
     }
 
     .navbar-brand{

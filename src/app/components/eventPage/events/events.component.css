@@ -1,3 +1,13 @@
+/*.main{
+  background-image: url("src/assets/12.png");
+  background-size: cover;
+}
+
+.blu{
+  backdrop-filter: blur(30px);
+  min-height: 100vh;
+ }
+  */
 .text {
   width: 50%;
   text-align: center;
@@ -110,8 +120,8 @@ img {
     background-color: rgba(237, 242, 242, 0.2);
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    border-radius: 20px;
-
   }
+
 
   
   
@@ -122,11 +132,15 @@ img {
     }
 
     .d-flex{
-      justify-content: center;   
+      justify-content: center; 
     }
 
     .me-3{
       width: 100%;
+    }
+
+    .cat{
+      display: block !important;
     }
 
     
@@ -167,6 +181,9 @@ img {
   @media screen and (min-width: 768px) and (max-width: 991px) {
     .card {
       width: 100%; 
+    }
+    .cat{
+      display: block !important;
     }
   
     .main {

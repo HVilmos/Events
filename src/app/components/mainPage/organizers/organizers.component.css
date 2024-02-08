@@ -1,45 +1,11 @@
 .main {
-  height: 500px;
   margin: 0 5%;
-  border-radius: 20px;
+  border-radius: 50px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-  margin-bottom: 10rem;
-}
-
-.bg {
-  background-image: url("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBldmVudHxlbnwwfHwwfHx8MA%3D%3D");
-  background-size: cover;
-  background-position: bottom;
-  width: 50%;
-  height: 100%;
-}
-
-.blur-wrapper {
-  height: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  backdrop-filter: blur(10px);
-  padding: 0 5%;
-}
-
-.left h1 {
-  font-weight: 500;
-  font-size: 3rem;
-  letter-spacing: 1px;
-}
-
-.left p {
-  padding: 0 1rem;
-  font-size: 1.2rem;
-}
-
-.right{
-  margin: 1rem 2rem;
+  width: 40%;
+  padding: 3rem 2rem;
+  
 }
 
 .button, button {
@@ -56,9 +22,6 @@
   padding: 0 20px;
 }
 
-.content {
-  padding: 7rem 0; }
-
 h2 {
   font-size: 2rem;
   font-weight: 700; }
@@ -68,44 +31,12 @@ label.error {
   color: red; 
 }
 
-#message {
-  resize: vertical; 
-}
-
 input{
   margin: 0.5rem 0;
 }
 
 textarea{
   height: 150px !important;
-}
+  margin: 0.5rem 0;
 
-@media screen and (max-width: 767px) {
-  .main {
-    display: block  !important;  
-  }
-
-  .bg{
-    width: 100%;
-    backdrop-filter: blur(0px);
-  }
-
-  .left h1{
-    font-size: 2rem;
-  }
-
-
-}
-
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .left h1{
-    font-size: 2rem !important;
-  }
-
-  .left{
-    padding: 2rem;
-  }
-
- 
 }

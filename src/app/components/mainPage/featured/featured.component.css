@@ -8,6 +8,8 @@
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 1px;
+    text-transform: uppercase;
+
   }
   
   .card {
@@ -20,6 +22,10 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: rgba(216, 222, 222, 0.3);
     background-image: linear-gradient(315deg, rgba(216, 222, 222, 0.3) 0%, rgba(229, 189, 246, 0.15 ) 74%);
+  }
+
+  .place, .date{
+    text-transform: uppercase;
   }
   
   .card:hover {

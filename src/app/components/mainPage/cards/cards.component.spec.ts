@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreeEbookComponent } from './free-ebook.component';
+import { CardsComponent } from './cards.component';
 
-describe('FreeEbookComponent', () => {
-  let component: FreeEbookComponent;
-  let fixture: ComponentFixture<FreeEbookComponent>;
+describe('CardsComponent', () => {
+  let component: CardsComponent;
+  let fixture: ComponentFixture<CardsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FreeEbookComponent]
+      declarations: [CardsComponent]
     });
-    fixture = TestBed.createComponent(FreeEbookComponent);
+    fixture = TestBed.createComponent(CardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

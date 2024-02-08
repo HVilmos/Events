@@ -1,17 +1,17 @@
-<div class="main d-flex">
+<div class="main">
     <div class="content">
       <div class="d-flex">
         <h5>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
           {{ event.date}}
         </h5>
-        <h5 class="ms-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+        <h5 class="ms-3 textU">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
           {{ event.place}}
 
         </h5>
       </div>
-        <h2 class="mb-3 ">{{ event.name }}</h2>
+        <h2 class="mb-3 textU">{{ event.name }}</h2>
         <small class="mb-3 w-75 ">{{ event.description }}</small>
         <button class="more mb-4 " (click)="onViewDetailsClick(event.key, 'events')">Megtekint</button>
         <p class="mt-4 mb-2 timeTitle">Hátralévő idő:</p>
@@ -26,40 +26,4 @@
         </div>
       </div>
     </div>
-    <div class="contentForm">
-      <div class="row justify-content-center ">
-        <div class="form login">
-          <div class="form-content">
-              <header>Regisztráció</header>
-                  <div class="field input-field">
-                      <input type="email" [(ngModel)]="email" placeholder="Email" class="input" name="email" autocomplete="email">
-                  </div>
-                  <div class="field input-field">
-                      <input type="password" [(ngModel)]="password" placeholder="Jelszó" class="password" name="password">
-                  </div>
-                  <div class="field input-field">
-                    <input type="password" [(ngModel)]="password2" placeholder="Jelszó" class="password" name="Password2">
-                </div>
-                <p class="text-center mt-4" routerLink="/signin">Van már fiókja?</p>
-      
-                  <div class="field button-field">
-                      <button [disabled]="validUser()" (click)="signUp()">Regisztráció</button>
-                  </div>
-             
-                </div>
-          <div class="line"></div>
-          
-          <div class="media-options">
-           
-            <button (click)="googleAuth()" class="login-with-google-btn">
-               Google Bejelentkezés
-            </button>
-              
-          </div>
-        </div>
-        </div>
-      
-      
-      
-    </div>
-  </div>
+</div>

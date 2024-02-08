@@ -1,30 +1,9 @@
-
-img{
-    height: 130px;
-    border-radius: 10px;
-}
-
-.name{
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-
-.card{
-    width: 270px;
-    border: none;
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.card:hover{
-    background-color: rgb(240, 238, 238);
-    cursor: pointer;
-    transition: 0.6s;
-}
-
-
-.name{
-    font-weight: 500;
-    margin-top: 1rem;
-}
+.main{
+    background-image: url("src/assets/bg3.png");
+    background-size: cover;
+  }
+  
+  .blu{
+    backdrop-filter: blur(170px) ;
+    min-height: 100vh;
+  }

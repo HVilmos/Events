@@ -1,19 +1,7 @@
-<div class="container d-flex mt-5" id="organizers">
-    <div class="d-flex main">
-        <div class="bg">
-            <div class="blur-wrapper">
-                <div class="left text-center">
-                    <h1>Szervezőknek</h1>
-                    <p>Ha szeretné, hogy egy rendezvénye megjelenjen az oldalunkon</p>
-                    <p>Vegye fel velünk a kapcsolatot</p>
-                    <button type="button" routerLink="/contact">Tovább</button>
-                </div>
-            </div>
-        </div>
-        <div class="right">
-            <div class="">
+<div class="container mt-5 d-flex justify-content-center" id="organizers">
+    <div class="main">
                 <h2 class="mb-5">Vegye fel velünk a kapcsolatot</h2>
-                <form class="border-right pr-5 mb-5"  name="contactForm" [formGroup]="form" (ngSubmit)="onSubmit()" >
+                <form class="border-right pr-5"  name="contactForm" [formGroup]="form" (ngSubmit)="onSubmit()" >
                     <div class="row">
                         <div class=" form-group">
                             <input type="text" class="form-control" name="name" id="name" placeholder="Név" formControlName="name" autocomplete="additional-name">
@@ -33,7 +21,5 @@
                         <input type="submit" value="Küldés" class="button mt-3" [disabled]="form.invalid">
                     </div>
                 </form>
-            </div>
-        </div>
     </div>
 </div>

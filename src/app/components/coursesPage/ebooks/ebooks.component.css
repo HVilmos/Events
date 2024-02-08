@@ -1,0 +1,106 @@
+
+.content{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+
+h1{
+font-weight: 600;
+  font-size: 50px;
+}
+
+button {
+    background: #113f67;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 100%;
+    height: 44px;
+    padding: 0 10px;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.avatar{
+    margin-right: 1rem;
+}
+
+.table{
+	width: 100%;
+	thead{
+		th{
+			border: none;
+			padding: 30px;
+			font-weight: 500;
+			color: lighten(black,50%);
+			
+		}
+		tr{
+			background: white;
+			border-bottom: 4px solid darken(#f8f9fd,3%);
+		}
+	}
+	tbody{
+		tr{
+			margin-bottom: 10px;
+			border-bottom: 4px solid #f8f9fd;
+			&:last-child(){
+				border-bottom: 0;
+			}
+		}
+		th,td{
+			border: none;
+			padding:30px;
+			background: white;
+			vertical-align: middle;
+		}
+		td{
+
+			.img{
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+			}
+			
+		}
+	}
+}
+
+.titles{
+    box-shadow: rgba(33, 35, 38, 0.5) 0px 10px 10px -10px;
+}
+
+@media screen and (max-width: 767px) {
+ 
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+ 
+  
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  
+}
+
+@media screen and (min-width: 1200px) {
+ 
+}
+
+
+
+

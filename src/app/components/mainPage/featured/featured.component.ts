@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
-import { ConfigService } from 'src/app/service/config.service';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/service/user.service';
 
 interface MyEvent {
   date?: string;
@@ -23,9 +21,7 @@ export class FeaturedComponent implements OnInit {
 
   constructor(
     private base: BaseService,
-    private config: ConfigService,
     private router: Router,
-    private userService: UserService
   ) {
     this.base.getData()
       .snapshotChanges()
@@ -38,7 +34,7 @@ export class FeaturedComponent implements OnInit {
               eventData.dateFormatted = eventDate ? this.formatDate(eventDate) : '';
               return { key: c.payload.key, ...eventData };
             } else {
-              return null; // Handle the case where category is not 'featured'
+              return null; 
             }
           })
         )

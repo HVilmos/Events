@@ -78,35 +78,6 @@ export class IntroductionComponent implements OnInit {
     };
   }
 
-  email:string=""
-  password:string=""
-  password2:string=""
-
- 
-
-  googleAuth(){
-    this.auth.googleAuth()
-  }
-
-  addMessage(){
-    this.base.addMessage("")
-  }
-
-  signUp() {
-    this.auth.signUp(this.email, this.password).then(
-      () => {
-        this.auth.sendVerificationEmail();
-        this.router.navigate(['verifyemail']); 
-      }
-    ).catch(
-      (e: any) => console.log(e)
-    );
-  }
-
-  validUser(){
-    return false
-  }
-
   onViewDetailsClick(eventId: string, eventType: string) {
     this.router.navigate(['/event', eventType, eventId]);
   }
