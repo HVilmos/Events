@@ -3,6 +3,10 @@ nav{
     color: #fff;
 }
 
+.small{
+    display: none;
+}
+
 a{
     color: #fff;
     cursor: pointer;
@@ -96,6 +100,23 @@ svg{
     .navbar-brand{
         margin-left: 1rem;
     }
+
+    .big{
+        display: none;
+    }
+
+    .small{
+        display: block;
+    }
+
+    .logo{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navList{
+        width: 100%;
+    }
   }
 
   .navbar-nav .nav-link {
@@ -103,3 +124,5 @@ svg{
     font-weight: 500;
     color: #fff;
   }
+
+  

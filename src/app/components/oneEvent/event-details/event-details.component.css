@@ -1,6 +1,6 @@
 .content{
     margin-top: 4rem;
-    height: 70vh;
+    min-height: 70vh;
 }
 
 .imgBox{
@@ -34,6 +34,7 @@ p{
 
     .imgBox{
         padding: 0%;
+        margin-bottom: 3rem;
     }
 
 }

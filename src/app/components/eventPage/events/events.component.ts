@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { BaseService } from 'src/app/service/base.service';
 import { MyEvents } from 'src/app/model/event.model';
@@ -21,7 +21,7 @@ export class EventsComponent implements OnInit {
   locationFilter = new FormControl('Any');
   searchFormControl = new FormControl();  
 
-  constructor(private base: BaseService, private router: Router) {}
+  constructor(private base: BaseService, private router: Router , private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.base.getData().snapshotChanges().pipe(
@@ -130,6 +130,8 @@ export class EventsComponent implements OnInit {
   onCategoryClick(category: string) {
     this.selectedEventCategory = this.selectedEventCategory === category ? null : category;
     this.applyFilters();
+
+    
   }
 
   onViewDetailsClick(eventId: string, eventType: string) {

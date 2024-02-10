@@ -51,11 +51,10 @@ h2{
   margin: 0;
 }
 
-.box:hover{
+.box:hover {
   transition: 0.6s;
   background-color: rgba(28, 34, 35, 0.08);
   cursor: pointer;
-  color: #fff;
 }
 
 img {
@@ -122,8 +121,9 @@ img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    border-radius: 20px;
   }
 
-
-  
+  .row{
+    min-height: 20vh;
+  }
   
   @media screen and (max-width: 767px) {
 
