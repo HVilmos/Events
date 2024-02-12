@@ -25,7 +25,6 @@ import { OrganizersComponent } from './components/mainPage/organizers/organizers
 import { FooterComponent } from './components/footer/footer.component';
 import { EventDetailsComponent } from './components/oneEvent/event-details/event-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { TopComponent } from './components/mainPage/top/top.component';
 import { NewsletterComponent } from './components/mainPage/newsletter/newsletter.component';
 import { CoursesComponent } from './components/coursesPage/courses/courses.component';
 import { CardsComponent } from './components/mainPage/cards/cards.component';
@@ -49,7 +48,6 @@ import { EbooksComponent } from './components/coursesPage/ebooks/ebooks.componen
     FooterComponent,
     EventDetailsComponent,
     ProfileComponent,
-    TopComponent,
     NewsletterComponent,
     CoursesComponent,
     CardsComponent,
